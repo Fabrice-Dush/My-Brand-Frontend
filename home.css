@@ -38,6 +38,11 @@ body {
   color: var(--color-text-heading);
 }
 
+.heading-tertiary {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+}
+
 .subheading {
   /* display: inline-block; */
   position: relative;
@@ -78,7 +83,7 @@ body {
 .btn--big {
   font-size: 1.8rem;
   padding: 1.6rem 4.8rem;
-  width: 23rem;
+  width: 25rem;
 }
 
 .btn--full {
@@ -92,8 +97,16 @@ body {
   color: var(--color-text);
 }
 
+.margin__bottom--lg {
+  margin-bottom: 7.2rem;
+}
+
 .margin__bottom--md {
   margin-bottom: 3.2rem;
+}
+
+.margin__bottom--sm {
+  margin-bottom: 2rem;
 }
 
 .text--center {
@@ -264,4 +277,109 @@ body {
 .section-skills {
   background-color: #000c18;
   padding: 9.6rem 0;
+}
+
+.skills .heading-secondary {
+  color: var(--color-white);
+}
+
+.skills .subheading::before,
+.skills .subheading::after {
+  background-color: var(--color-white);
+}
+
+.skills__description {
+  color: var(--color-white);
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+
+.skills__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5.2rem;
+}
+
+.skills__box {
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  /* padding-top: 4.4rem; */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill__content {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+/* 
+.skill__name {
+}
+
+.skill__level {
+} */
+
+.skill__box {
+  position: relative;
+  background-color: #e7eaed;
+  padding: 0.4rem;
+  border-radius: 10rem;
+}
+
+.skill__box::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: inherit;
+  content: "";
+  display: inline-block;
+  background-color: var(--color-primary);
+  padding: 0.4rem;
+}
+
+.skill__box--1::before {
+  width: 90%;
+}
+
+.skill__box--2::before {
+  width: 80%;
+}
+
+.skill__box--3::before {
+  width: 70%;
+}
+
+.skill__box--4::before {
+  width: 30%;
+}
+
+.skill__box--5::before {
+  width: 15%;
+}
+
+.skill__box--6::before {
+  width: 65%;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    /* background-color: red; */
+  }
+
+  .section__hero {
+    height: 100vh;
+  }
 }
