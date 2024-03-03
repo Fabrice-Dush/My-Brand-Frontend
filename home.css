@@ -1,0 +1,116 @@
+:root {
+  --color-primary: #007af3;
+  --color-text: #000c18;
+  --color-text-heading: #112a46;
+  --color-white: #fff;
+  --color-black: #111;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+/*? *********************************/
+/*? GENERAL COMPONENTS */
+/*? *********************************/
+.heading__primary {
+  font-size: 5.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn--big {
+  font-size: 1.8rem;
+  padding: 1.6rem 4.8rem;
+  width: 21rem;
+}
+
+.btn--full {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  margin-right: 2rem;
+}
+
+.btn--outline {
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+/*? *********************************/
+/*? SECTION HERO */
+/*? *********************************/
+.section__hero {
+  background-image: linear-gradient(
+      to right,
+      rgba(19, 49, 83, 0.295),
+      rgba(19, 49, 83, 0.295)
+    ),
+    url(img/background2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6.4rem;
+  max-width: 125rem;
+  margin: 0 auto;
+}
+
+.hero__text-box {
+  padding-top: 16rem;
+  padding-left: 4rem;
+}
+
+.hero__title {
+  color: var(--color-primary);
+  font-size: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--color-white);
+  margin-bottom: 4.8rem;
+}
+
+.hero__img-box {
+}
+
+.hero__img {
+  margin-top: 2.6rem;
+  width: 100%;
+  height: 65%;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  align-self: center;
+}
