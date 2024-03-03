@@ -617,3 +617,16 @@ body {
     width: 25rem;
   }
 }
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  height: 8rem;
+  background-color: var(--color-text-heading);
+  z-index: 2;
+}
+
+/* .sticky .nav__link:link,
+.sticky .nav__link:visited {
+  color: #000c18;
+} */
