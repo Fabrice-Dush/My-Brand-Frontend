@@ -378,8 +378,7 @@ body {
   body {
     /* background-color: red; */
   }
-
-  .section__hero {
+  q .section__hero {
     height: 100vh;
   }
 }
