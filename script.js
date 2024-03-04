@@ -1,14 +1,6 @@
-const header = document.querySelector(".header");
-const aboutEl = document.querySelector(".aboutEl");
+const headerEl = document.querySelector(".header");
+const menuBtn = document.querySelector(".menu__btn");
 
-const aboutElObserver = new IntersectionObserver(
-  function ([entry]) {
-    console.log(entry);
-  },
-  {
-    root: null,
-    threshold: 0,
-  }
-);
-
-aboutElObserver.observe(aboutEl);
+menuBtn.addEventListener("click", function () {
+  headerEl.classList.toggle("show");
+});
