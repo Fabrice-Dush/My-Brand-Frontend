@@ -23,7 +23,7 @@
     <title>Home &mdash; Personal Portfolio Website</title>
   </head>
   <body>
-    <section class="section__hero">
+    <section class="section__hero" id="home">
       <header class="header">
         <div class="logo">
           Fab<span class="logo__in">ri</span><span class="logo__inn">ce</span
@@ -32,10 +32,12 @@
         <nav class="nav">
           <ul class="nav__list">
             <li>
-              <a href="#" class="nav__link btn btn--full btn--small">Home</a>
+              <a href="#home" class="nav__link btn btn--full btn--small"
+                >Home</a
+              >
             </li>
-            <li><a href="#" class="nav__link">About me</a></li>
-            <li><a href="#" class="nav__link">Skills</a></li>
+            <li><a href="#about" class="nav__link">About me</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
             <li><a href="#" class="nav__link">Portfolio</a></li>
             <li><a href="#" class="nav__link">Blog</a></li>
             <li><a href="#" class="nav__link">Contact</a></li>
@@ -60,15 +62,17 @@
           <h1 class="heading-primary hero__heading">
             <span>I’m Fabrice</span><span>Dushimimana</span>
           </h1>
-          <a href="#" class="btn btn--big btn--full">Hire me &rarr;</a>
-          <a href="#" class="btn btn--big btn--outline">About me &rarr;</a>
+          <a href="#" class="btn btn--big btn--full hire-btn">Hire me &rarr;</a>
+          <a href="#about" class="btn btn--big btn--outline about-btn"
+            >About me &rarr;</a
+          >
         </div>
         <div class="hero__img-box">
           <img src="img/fab.jpg" alt="My photo" class="hero__img" />
         </div>
       </div>
     </section>
-    <section class="section__about">
+    <section class="section__about" id="about">
       <div class="container">
         <div class="box margin__bottom--md">
           <h2 class="heading-secondary">About me</h2>
@@ -104,7 +108,7 @@
         </div>
       </div>
     </section>
-    <section class="section-skills">
+    <section class="section-skills" id="skills">
       <div class="container skills">
         <div class="box margin__bottom--lg">
           <h2 class="heading-secondary">My Skills</h2>
