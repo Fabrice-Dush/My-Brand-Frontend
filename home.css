@@ -368,6 +368,24 @@ body {
   width: 65%;
 }
 
+/*? SECTION PORTFOLIO */
+.section-portofolio {
+  padding: 9.6rem 0;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  height: 8rem;
+  background-color: var(--color-text-heading);
+  z-index: 2;
+}
+
+/* .sticky .nav__link:link,
+.sticky .nav__link:visited {
+  color: #000c18;
+} */
+
 /*? APPLIES BELOW THE 1200px WIDTH */
 @media only screen and (max-width: 75rem) {
   html {
@@ -617,16 +635,3 @@ body {
     width: 25rem;
   }
 }
-
-.sticky {
-  position: fixed;
-  width: 100%;
-  height: 8rem;
-  background-color: var(--color-text-heading);
-  z-index: 2;
-}
-
-/* .sticky .nav__link:link,
-.sticky .nav__link:visited {
-  color: #000c18;
-} */
