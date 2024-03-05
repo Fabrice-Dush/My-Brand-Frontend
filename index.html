@@ -8,7 +8,9 @@
       href="https://fonts.googleapis.com/css2?family=Open Sans"
     />
 
+    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -20,7 +22,7 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <title>Home &mdash; Personal Portfolio Website</title>
+    <title>HomePage &mdash; Personal Portfolio Website</title>
   </head>
   <body>
     <section class="section__hero" id="home">
@@ -32,23 +34,24 @@
         <nav class="nav">
           <ul class="nav__list">
             <li>
-              <a href="#home" class="nav__link btn btn--full btn--small"
+              <a href="index.html" class="nav__link btn btn--small active-link"
                 >Home</a
               >
             </li>
-            <li><a href="#about" class="nav__link">About me</a></li>
-            <li><a href="#skills" class="nav__link">Skills</a></li>
-            <li><a href="#" class="nav__link">Portfolio</a></li>
-            <li><a href="#" class="nav__link">Blog</a></li>
-            <li><a href="#" class="nav__link">Contact</a></li>
-            <li><a href="#" class="nav__link">Login</a></li>
+            <li><a href="about.html" class="nav__link">About me</a></li>
+            <li><a href="skills.html" class="nav__link">Skills</a></li>
+            <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+            <li><a href="blog.html" class="nav__link">Blog</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+            <!-- <li><a href="login.html" class="nav__link">Login</a></li> -->
           </ul>
         </nav>
+        <button class="menu__btn">
+          <ion-icon name="menu-outline" class="menu__btn-icon"></ion-icon>
+          <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
+        </button>
       </header>
-      <button class="menu__btn">
-        <ion-icon name="menu-outline" class="menu__btn-icon"></ion-icon>
-        <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
-      </button>
+
       <div class="hero">
         <div class="hero__text-box">
           <p class="hero__title">
@@ -62,8 +65,10 @@
           <h1 class="heading-primary hero__heading">
             <span>I’m Fabrice</span><span>Dushimimana</span>
           </h1>
-          <a href="#" class="btn btn--big btn--full hire-btn">Hire me &rarr;</a>
-          <a href="#about" class="btn btn--big btn--outline about-btn"
+          <a href="contact.html" class="btn btn--big btn--full hire-btn"
+            >Hire me &rarr;</a
+          >
+          <a href="about.html" class="btn btn--big btn--outline about-btn"
             >About me &rarr;</a
           >
         </div>
@@ -71,114 +76,6 @@
           <img src="img/fab.jpg" alt="My photo" class="hero__img" />
         </div>
       </div>
-    </section>
-    <section class="section__about" id="about">
-      <div class="container">
-        <div class="box margin__bottom--md">
-          <h2 class="heading-secondary">About me</h2>
-          <span class="subheading">Who Iam</span>
-        </div>
-      </div>
-      <div class="container about">
-        <div class="about__img-box">
-          <img src="img/fab.jpg" alt="Codes on a screen" class="about__img" />
-        </div>
-        <div class="about__text-box">
-          <p class="about__description">
-            Hi there, I am <span class="logo__inn">Dushimimana</span>
-            <span class="logo__inner">Fabrice</span>, a junior software
-            developer based in Kigali, Rwanda.
-          </p>
-          <p class="about__description">
-            From a project requirements analysis, writing code, project
-            optimization to testing, I am able to help you bring your brilliant
-            ideas to life.
-          </p>
-          <!-- <p class="about__description">
-            So If you have a website you want to create to increase your
-            business’s revenue, I’m here to help you as I am able to combine
-            both logic and problem-solving capabilities to create beautiful and
-            functional websites.
-          </p> -->
-          <p class="about__description">
-            Hire me and, I promise, you will quickly see a positive return for
-            your investment.
-          </p>
-          <a href="#" class="btn btn--big btn--full">Get in touch</a>
-        </div>
-      </div>
-    </section>
-    <section class="section-skills" id="skills">
-      <div class="container skills">
-        <div class="box margin__bottom--lg">
-          <h2 class="heading-secondary">My Skills</h2>
-          <span class="subheading">What I know</span>
-        </div>
-        <div class="skills__container">
-          <div class="skills__description-box">
-            <h2 class="heading-tertiary margin__bottom--sm">
-              My creative skills & experiences
-            </h2>
-            <p class="skills__description">
-              I have been learning to code for quite some time now and in the
-              process I have gained a lot of useful skills, from UI/UX design to
-              HTML, CSS, SASS, JavaScript, MySQL and NodeJs.<br /><br />
-              As programming is my hobby I plan to keep studying new skills and
-              refining my current ones. <br />
-              I have used these skills to create both static and dynamic
-              websites which are functional 100%.
-            </p>
-            <a href="#" class="btn btn--big btn--full">Check my work</a>
-          </div>
-          <div class="skills__box">
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">html</p>
-                <p class="skill__level">90%</p>
-              </div>
-              <div class="skill__box skill__box--1"></div>
-            </div>
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">css</p>
-                <p class="skill__level">80%</p>
-              </div>
-              <div class="skill__box skill__box--2"></div>
-            </div>
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">JavaScript</p>
-                <p class="skill__level">70%</p>
-              </div>
-              <div class="skill__box skill__box--3"></div>
-            </div>
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">SASS</p>
-                <p class="skill__level">30%</p>
-              </div>
-              <div class="skill__box skill__box--4"></div>
-            </div>
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">NODEJS</p>
-                <p class="skill__level">15%</p>
-              </div>
-              <div class="skill__box skill__box--5"></div>
-            </div>
-            <div class="skill">
-              <div class="skill__content">
-                <p class="skill__name">MYSQL</p>
-                <p class="skill__level">65%</p>
-              </div>
-              <div class="skill__box skill__box--6"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-portofolio">
-      <div class="container"></div>
     </section>
   </body>
 </html>

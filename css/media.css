@@ -1,0 +1,261 @@
+/*? APPLIES ON WIDTH BELOW 1200PX */
+@media only screen and (max-width: 75rem) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    padding-top: 5rem;
+  }
+}
+
+/*? APPLIES ON WIDTH BELOW 1000PX */
+@media only screen and (max-width: 63rem) {
+  .hero {
+    column-gap: 2.4rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+
+  .heading-primary {
+    font-size: 4.8rem;
+  }
+
+  .btn--big {
+    font-size: 1.8rem;
+    padding: 1.2rem 4.8rem;
+    width: 21rem;
+  }
+}
+
+/*? BELOW 800PX */
+@media only screen and (max-width: 50rem) {
+  html {
+    font-size: 43.75%;
+  }
+
+  .hero {
+    padding-top: 12rem;
+  }
+}
+
+/*? BELOW 700px */
+@media only screen and (max-width: 44rem) {
+  .menu__btn {
+    display: block;
+    position: fixed;
+    right: 2.4rem;
+    top: 2.4rem;
+    z-index: 4;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
+
+  .menu__btn-icon[name="close-outline"] {
+    display: none;
+  }
+
+  .show .menu__btn .menu__btn-icon[name="menu-outline"] {
+    display: none;
+  }
+
+  .show .menu__btn .menu__btn-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--color-text);
+    transform: translateY(-100%);
+    z-index: 4;
+    transition: all 0.3s ease;
+  }
+
+  .show .nav {
+    transform: translateY(0);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 6rem;
+    align-items: flex-start;
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-10%);
+    /* transform: translate(-50%, -50%); */
+  }
+
+  .nav__link:link,
+  .nav__link:visited {
+    font-size: 3rem;
+  }
+
+  .btn--small:link,
+  .btn--small:visited {
+    font-size: 2.4rem !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8rem;
+    padding: 5.2rem;
+  }
+
+  .hero__text-box {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .hero__img {
+    display: block;
+    width: 70%;
+    height: 70%;
+    transform: translateX(20%);
+  }
+
+  .hero__title {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2.4rem;
+  }
+
+  .hero__heading {
+    flex-direction: row;
+    text-align: center;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .section__about {
+    padding-bottom: 15rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    display: block;
+    gap: 0;
+  }
+
+  .about__description {
+    font-size: 3.2rem;
+  }
+
+  .about__img-box {
+    align-items: start;
+  }
+
+  .about__text-box {
+    position: relative;
+  }
+
+  .skills__container {
+    grid-template-columns: 1fr;
+    gap: 9.6rem;
+  }
+
+  .skills__box {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+
+  .heading-primary {
+    font-size: 5rem;
+  }
+}
+
+/*? APPLIES BELOW THE WIDTH OF 600px */
+@media only screen and (max-width: 38rem) {
+  .align--end {
+    justify-self: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+/*? Below 512px */
+@media only screen and (max-width: 32rem) {
+  html {
+    font-size: 37.5%;
+  }
+
+  .hero {
+    padding: 1.8rem;
+  }
+
+  .hero__heading {
+    justify-content: center;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero {
+    padding: 7.2rem;
+  }
+
+  .section-skills {
+    height: 100vh;
+  }
+}
+
+/*? Below 512px */
+@media only screen and (max-width: 32rem) {
+  html {
+    font-size: 31.25%;
+  }
+
+  .hero__img {
+    width: 100%;
+    transform: translateX(3%);
+  }
+
+  .heading-primary {
+    font-size: 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.4rem;
+  }
+}
+/*? APPLIES BELOW 350 width */
+@media only screen and (max-width: 22rem) {
+  .hero {
+    padding: 2.4rem;
+    padding-top: 4.8rem;
+  }
+
+  .hero__img {
+    transform: translateX(0);
+  }
+
+  .heading-primary {
+    font-size: 3.8rem;
+  }
+
+  .hero__text-box {
+    text-align: center;
+    justify-self: start;
+    padding-left: 1.2rem;
+  }
+
+  .hero__heading {
+    text-align: left;
+  }
+}
