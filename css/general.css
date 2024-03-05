@@ -64,6 +64,7 @@ body {
   background-color: var(--color-text-heading);
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -72,6 +73,11 @@ body {
   border-radius: 0.6rem;
   display: inline-block;
   text-align: center;
+  outline: none;
+
+  /*? FOR BUTTONS */
+  cursor: pointer;
+  border: none;
 }
 
 .btn--small {
