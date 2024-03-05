@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open Sans"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
+    <title>Login &mdash; Personal Portfolio Website</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        Fab<span class="logo__in">ri</span><span class="logo__inn">ce</span
+        ><span class="logo__inner"> Co.</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li>
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="nav__link">About me</a>
+          </li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+          <li>
+            <a href="blog.html" class="nav__link">Blog</a>
+          </li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <li>
+            <a href="login.html" class="nav__link btn btn--small active-link"
+              >Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button class="menu__btn">
+        <ion-icon name="menu-outline" class="menu__btn-icon"></ion-icon>
+        <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
+      </button>
+    </header>
+    <section class="section-login">
+      <div class="container form-container">
+        <p class="form__title">Login to your account to get started</p>
+        <form action="" class="form">
+          <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form__input"
+              placeholder="name@email.com"
+              required
+            />
+          </div>
+          <div class="form__group">
+            <label for="password" class="form__label">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form__input"
+              placeholder="***************"
+              required
+            />
+          </div>
+          <button class="btn btn--big btn--full">Login</button>
+          <p class="form__account">
+            Don't have an account?
+            <a href="#" class="form__link">Signup here</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
