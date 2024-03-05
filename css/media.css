@@ -32,6 +32,17 @@
     padding: 1.2rem 4.8rem;
     width: 21rem;
   }
+
+  .blogs {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 4.8rem;
+  }
+
+  .blog--3 {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    width: 50%;
+  }
 }
 
 /*? BELOW 800PX */
@@ -96,7 +107,6 @@
     top: 10%;
     left: 50%;
     transform: translateX(-10%);
-    /* transform: translate(-50%, -50%); */
   }
 
   .nav__link:link,
@@ -107,6 +117,21 @@
   .btn--small:link,
   .btn--small:visited {
     font-size: 2.4rem !important;
+  }
+
+  .blogs {
+    grid-template-columns: 1fr;
+    row-gap: 4.8rem;
+  }
+
+  .blog {
+    width: 60%;
+    justify-self: center;
+  }
+
+  .blog--3 {
+    grid-column: 1 / 2;
+    width: 60%;
   }
 
   .hero {
@@ -217,13 +242,6 @@
   .section-skills {
     height: 100vh;
   }
-}
-
-/*? Below 512px */
-@media only screen and (max-width: 32rem) {
-  html {
-    font-size: 31.25%;
-  }
 
   .hero__img {
     width: 100%;
@@ -238,8 +256,13 @@
     font-size: 2.4rem;
   }
 }
-/*? APPLIES BELOW 350 width */
+
+/*? APPLIES BELOW 350px width */
 @media only screen and (max-width: 22rem) {
+  html {
+    font-size: 31.25%;
+  }
+
   .hero {
     padding: 2.4rem;
     padding-top: 4.8rem;
@@ -261,5 +284,9 @@
 
   .hero__heading {
     text-align: left;
+  }
+
+  .blog {
+    width: 100%;
   }
 }
