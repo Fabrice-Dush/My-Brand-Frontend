@@ -179,6 +179,7 @@ body {
   justify-content: center;
   border-radius: 0.4rem;
   transform: translateY(-30%);
+  cursor: pointer;
   display: none;
 }
 
