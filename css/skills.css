@@ -32,7 +32,7 @@
   color: var(--color-white);
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 3.6rem;
 }
 
 .skill {
