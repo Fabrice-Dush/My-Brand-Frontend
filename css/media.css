@@ -338,6 +338,14 @@
     flex-direction: column;
     gap: 1.2rem;
   }
+
+  .btn--small:link,
+  .btn--small:visited {
+    padding: 1.8rem 18rem !important;
+    padding-left: 2.4rem !important;
+    font-size: 3.2rem !important;
+    text-transform: capitalize;
+  }
 }
 
 /*? APPLIES BELOW 350px width */
@@ -376,9 +384,5 @@
   .btn--big {
     width: 23rem !important;
     font-size: 1.6rem;
-  }
-
-  .btn--small {
-    font-size: 4rem !important;
   }
 }
