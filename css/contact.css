@@ -1,0 +1,88 @@
+.section-contact {
+  padding: 3.2rem 0;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.contact .heading-tertiary {
+  margin-bottom: 1.8rem;
+}
+
+.contact__title {
+  font-size: 2rem;
+  margin-bottom: 3.2rem;
+}
+
+.contact__description {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  column-gap: 3.2rem;
+  row-gap: 0.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.contact__icon {
+  font-size: 4rem;
+  color: var(--color-primary);
+  grid-row: 1 / -1;
+}
+
+.contact__text {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact__desc {
+  font-size: 1.8rem;
+  grid-column: 2;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.social {
+  font-size: 2.4rem;
+  color: var(--color-green);
+}
+
+.form {
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 0.4rem;
+  background-color: var(--color-text);
+  padding: 6.2rem 3.2rem;
+}
+
+.form__input,
+.form__textarea {
+  font-size: 1.8rem;
+  font-family: inherit;
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: #aaa;
+}
+
+.form .form__group:nth-child(3),
+.form .form__group:nth-child(4) {
+  grid-column: span 2;
+}
+
+.form__message {
+  margin-bottom: 2.4rem;
+}

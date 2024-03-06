@@ -1,0 +1,45 @@
+/*? *********************************/
+/*? SECTION ABOUT */
+/*? *********************************/
+.section__about {
+  padding: 4.8rem 0;
+  padding-bottom: 0;
+}
+
+.about {
+  display: grid;
+  gap: 7.2rem;
+  grid-template-columns: repeat(2, 1fr);
+  /* justify-items: start; */
+  align-items: start;
+}
+
+.about__text-box,
+.about__img-box {
+  height: 65%;
+}
+
+.about__text-box {
+  padding-top: 9rem;
+}
+
+.about__description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.about__description:last-of-type {
+  margin-bottom: 3.2rem;
+}
+
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.9rem;
+}
+
+.btn--big {
+  width: 25rem !important;
+}

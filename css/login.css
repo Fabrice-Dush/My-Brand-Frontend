@@ -1,0 +1,67 @@
+.section-login {
+  padding: 4.8rem 0;
+  background-color: #e6f2fe;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.form {
+  background: linear-gradient(
+    to right bottom,
+    var(--color-green),
+    var(--color-primary),
+    var(--color-pink)
+  );
+
+  display: inline-block;
+  border-radius: 0.4rem;
+  padding: 3.2rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.form__label {
+  font-size: 2rem;
+}
+
+.form__input {
+  padding: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+}
+
+.btn--full {
+  background-color: var(--color-green);
+  margin-bottom: 1.6rem;
+}
+
+.form__title {
+  font-size: 2rem;
+}
+
+.form__account {
+  font-size: 1.8rem;
+}
+
+.form__link:link,
+.form__link:visited {
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 700;
+  color: #2d2ad3;
+}

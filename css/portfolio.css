@@ -1,0 +1,66 @@
+/*? SECTION PORTFOLIO */
+.section-portofolio {
+  padding: 4.8rem 0;
+  background-color: var(--color-text);
+}
+
+.heading-secondary {
+  color: var(--color-primary);
+}
+
+.subheading {
+  color: var(--color-white);
+}
+
+.subheading::before,
+.subheading::after {
+  background-color: var(--color-white);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 4.8rem;
+  justify-items: start;
+}
+
+.project__container {
+  background: linear-gradient(
+    to right bottom,
+    var(--color-primary),
+    var(--color-pink),
+    var(--color-green)
+  );
+  padding: 3.2rem;
+  border-radius: 0.6rem;
+}
+
+.project {
+  position: relative;
+}
+
+.project__img {
+  width: 30rem;
+  border-radius: 0.6rem;
+}
+
+.project__btn:link,
+.project__btn:visited {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%) translateY(30%);
+  font-size: 1.4rem;
+  background-color: var(--color-text-heading);
+  transition: all 0.4s ease;
+}
+
+.project__btn:active,
+.project__btn:hover {
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.align--end {
+  justify-self: end;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open Sans"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
+    <title>Contact page &mdash; Personal Portfolio Website</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        Fab<span class="logo__in">ri</span><span class="logo__inn">ce</span
+        ><span class="logo__inner"> Co.</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li>
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="nav__link">About me</a>
+          </li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+          <li>
+            <a href="blog.html" class="nav__link">Blog</a>
+          </li>
+          <li>
+            <a href="contact.html" class="nav__link btn btn--small active-link"
+              >Contact</a
+            >
+          </li>
+          <li><a href="login.html" class="nav__link">Login</a></li>
+        </ul>
+      </nav>
+      <button class="menu__btn">
+        <ion-icon name="menu-outline" class="menu__btn-icon"></ion-icon>
+        <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
+      </button>
+    </header>
+    <section class="section-contact">
+      <div class="container">
+        <div class="box margin__bottom--md">
+          <h2 class="heading-secondary">Contact me</h2>
+          <span class="subheading">Get in touch</span>
+        </div>
+      </div>
+      <div class="container contact">
+        <div class="contact__info">
+          <h3 class="heading-tertiary">Get in touch</h3>
+          <p class="contact__title">We would like to hear something from you</p>
+          <div class="contact__info-container">
+            <div class="contact__description">
+              <ion-icon name="person-outline" class="contact__icon"></ion-icon>
+              <p class="contact__text">Name</p>
+              <p class="contact__desc">Dushimimana Fabrice</p>
+            </div>
+            <div class="contact__description">
+              <ion-icon name="mail-outline" class="contact__icon"></ion-icon>
+              <p class="contact__text">Email</p>
+              <p class="contact__desc">ancefupride@gmail.com</p>
+            </div>
+            <div class="contact__description">
+              <ion-icon
+                name="location-outline"
+                class="contact__icon"
+              ></ion-icon>
+              <p class="contact__text">Address</p>
+              <p class="contact__desc">KG ROAD 105 ST, Kigali, Rwanda</p>
+            </div>
+            <div class="contact__description">
+              <ion-icon name="call-outline" class="contact__icon"></ion-icon>
+              <p class="contact__text">Tel</p>
+              <p class="contact__desc">(250) 782355972</p>
+            </div>
+            <div class="contact__description">
+              <ion-icon
+                name="checkbox-outline"
+                class="contact__icon"
+              ></ion-icon>
+              <p class="contact__text">Social Links</p>
+              <div class="socials">
+                <ion-icon name="logo-linkedin" class="social"></ion-icon>
+                <ion-icon name="logo-twitter" class="social"></ion-icon>
+                <ion-icon name="logo-github" class="social"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact__form">
+          <form class="form">
+            <div class="form__group">
+              <input
+                type="text"
+                name="fullname"
+                class="form__input form__fullname"
+                placeholder="Your FullName"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <input
+                type="email"
+                name="email"
+                class="form__input form__email"
+                placeholder="Your email address"
+                required
+              />
+            </div>
+            <div class="form__group">
+              <input
+                type="text"
+                name="subject"
+                class="form__input form__email"
+                placeholder="Subject"
+                required
+              />
+            </div>
+            <div class="form__group form__message">
+              <textarea
+                class="form__textarea"
+                name="textarea"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button class="btn btn--big btn--full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
