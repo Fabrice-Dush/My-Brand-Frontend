@@ -199,3 +199,19 @@ body {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
+
+.footer {
+  background-color: #000;
+  padding: 3.2rem;
+  padding-left: 4.8rem;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.footer__highlight {
+  color: var(--color-primary);
+}
