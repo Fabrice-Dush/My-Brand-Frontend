@@ -210,6 +210,7 @@ body {
 .footer__text {
   font-size: 2rem;
   color: var(--color-white);
+  line-height: 1.6;
 }
 
 .footer__highlight {
