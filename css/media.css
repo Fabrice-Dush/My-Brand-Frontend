@@ -282,6 +282,10 @@
   .contact {
     padding-left: 4.8rem;
   }
+
+  .hero {
+    padding-top: 6rem;
+  }
 }
 
 /*? Below 512px */
