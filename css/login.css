@@ -53,6 +53,10 @@
   font-size: 1.8rem;
 }
 
+.form__input::placeholder {
+  font-size: 1.4rem;
+}
+
 .btn--full {
   background-color: var(--color-green);
   margin-bottom: 1.6rem;
@@ -71,5 +75,5 @@
   text-decoration: none;
   font-family: inherit;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-primary);
 }
