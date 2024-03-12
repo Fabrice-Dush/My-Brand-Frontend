@@ -36,6 +36,14 @@
   font-size: 2rem;
 }
 
+.form__forgot:link,
+.form__forgot:visited {
+  align-self: flex-end;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--color-white);
+}
+
 .form__input {
   padding: 1.2rem;
   outline: none;
