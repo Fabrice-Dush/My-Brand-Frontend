@@ -1,7 +1,7 @@
 .section-login {
   padding: 4.8rem 0;
   background-color: #e6f2fe;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .form-container {
@@ -22,14 +22,14 @@
 
   display: inline-block;
   border-radius: 0.4rem;
-  padding: 3.2rem;
+  padding: 3.2rem 5rem;
 }
 
 .form__group {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
 }
 
 .form__label {

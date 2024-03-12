@@ -30,7 +30,7 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <title>Login &mdash; Personal Portfolio Website</title>
+    <title>Signup &mdash; Personal Portfolio Website</title>
   </head>
   <body>
     <header class="header">
@@ -53,8 +53,8 @@
           </li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <li>
-            <a href="login.html" class="nav__link btn btn--small active-link"
-              >Login</a
+            <a href="signup.html" class="nav__link btn btn--small active-link"
+              >Signup</a
             >
           </li>
         </ul>
@@ -66,8 +66,19 @@
     </header>
     <section class="section-login">
       <div class="container form-container">
-        <p class="form__title">Login to your account to get started</p>
+        <p class="form__title">Create your account here.</p>
         <form action="" class="form">
+          <div class="form__group">
+            <label for="fullname" class="form__label">FullName</label>
+            <input
+              type="text"
+              name="fullname"
+              id="fullname"
+              class="form__input"
+              placeholder="gashumba alice"
+              required
+            />
+          </div>
           <div class="form__group">
             <label for="email" class="form__label">Email</label>
             <input
@@ -90,10 +101,21 @@
               required
             />
           </div>
-          <button class="btn btn--big btn--full btn--login">Login</button>
+          <div class="form__group">
+            <label for="password2" class="form__label">Confirm Password</label>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              class="form__input"
+              placeholder="***************"
+              required
+            />
+          </div>
+          <button class="btn btn--big btn--full btn--signup">Signup</button>
           <p class="form__account">
-            Don't have an account?
-            <a href="signup.html" class="form__link">Signup here</a>
+            Already have an account?
+            <a href="login.html" class="form__link">Sign in</a>
           </p>
         </form>
       </div>
