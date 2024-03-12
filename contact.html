@@ -114,40 +114,48 @@
           </div>
         </div>
         <div class="contact__form">
-          <form class="form">
+          <form class="form form__contact">
             <div class="form__group">
               <input
                 type="text"
                 name="fullname"
                 class="form__input form__fullname"
                 placeholder="Your FullName"
-                required
-              />
-            </div>
-            <div class="form__group">
-              <input
-                type="email"
-                name="email"
-                class="form__input form__email"
-                placeholder="Your email address"
-                required
               />
             </div>
             <div class="form__group">
               <input
                 type="text"
-                name="subject"
+                name="email"
                 class="form__input form__email"
-                placeholder="Subject"
-                required
+                placeholder="Your email address"
               />
+              <!-- <div class="error">
+                <ion-icon name="warning" class="error__icon"></ion-icon>
+                <p class="error__message">
+                  Please tell us exactly what you want .
+                </p>
+              </div> -->
+            </div>
+            <div class="form__group">
+              <input
+                type="text"
+                name="subject"
+                class="form__input form__subject"
+                placeholder="Subject"
+              />
+              <!-- <div class="error">
+                <ion-icon name="warning" class="error__icon"></ion-icon>
+                <p class="error__message">
+                  Please tell us exactly what you want .
+                </p>
+              </div> -->
             </div>
             <div class="form__group form__message">
               <textarea
                 class="form__textarea"
                 name="textarea"
                 placeholder="Your Message"
-                required
               ></textarea>
             </div>
             <button class="btn btn--big btn--full">Send Message</button>

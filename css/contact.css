@@ -56,7 +56,7 @@
 
 .form {
   display: grid;
-  gap: 1.8rem;
+  gap: 2.4rem;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 0.4rem;
   background-color: var(--color-text);

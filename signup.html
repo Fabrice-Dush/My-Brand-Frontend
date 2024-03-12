@@ -67,27 +67,25 @@
     <section class="section-login">
       <div class="container form-container">
         <p class="form__title">Create your account here.</p>
-        <form action="" class="form">
+        <form action="" class="form form__signup">
           <div class="form__group">
             <label for="fullname" class="form__label">FullName</label>
             <input
               type="text"
               name="fullname"
               id="fullname"
-              class="form__input"
+              class="form__input form__fullname"
               placeholder="gashumba alice"
-              required
             />
           </div>
           <div class="form__group">
             <label for="email" class="form__label">Email</label>
             <input
-              type="email"
+              type="text"
               name="email"
               id="email"
-              class="form__input"
+              class="form__input form__email"
               placeholder="name@email.com"
-              required
             />
           </div>
           <div class="form__group">
@@ -96,9 +94,8 @@
               type="password"
               name="password"
               id="password"
-              class="form__input"
+              class="form__input form__password"
               placeholder="***************"
-              required
             />
           </div>
           <div class="form__group">
@@ -107,9 +104,8 @@
               type="password"
               name="password2"
               id="password2"
-              class="form__input"
+              class="form__input form__password2"
               placeholder="***************"
-              required
             />
           </div>
           <button class="btn btn--big btn--full btn--signup">Signup</button>
