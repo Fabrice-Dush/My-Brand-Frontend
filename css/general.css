@@ -258,3 +258,20 @@ body {
 .hidden {
   display: none;
 }
+
+.message {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  left: 0;
+  padding: 2.4rem;
+  background-color: var(--color-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message__text {
+  font-size: 2.4rem;
+  color: #fff;
+}
