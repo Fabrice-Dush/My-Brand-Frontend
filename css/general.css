@@ -260,6 +260,7 @@ body {
 }
 
 .message {
+  z-index: 1;
   position: fixed;
   width: 100%;
   left: 0;

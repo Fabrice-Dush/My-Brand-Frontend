@@ -13,6 +13,7 @@
 }
 
 .form {
+  width: 45%;
   background: linear-gradient(
     to right bottom,
     var(--color-green),
@@ -42,10 +43,12 @@
   text-decoration: none;
   font-size: 1.4rem;
   color: var(--color-white);
+  position: fixed;
+  top: 100%;
 }
 
 .form__input {
-  padding: 1.2rem;
+  padding: 1.4rem 1.2rem;
   outline: none;
   border: none;
   border-radius: 0.4rem;
@@ -76,4 +79,36 @@
   font-family: inherit;
   font-weight: 700;
   color: var(--color-green);
+}
+
+.form__show {
+  position: relative;
+}
+
+.show-container {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  font-size: 3rem;
+  color: var(--color-green);
+  width: 3.2rem;
+  height: 3.2rem;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+[name="moon-outline"] {
+  display: none;
+}
+
+.visible [name="moon-outline"] {
+  display: block;
+}
+
+.visible [name="sunny-outline"] {
+  display: none;
 }
