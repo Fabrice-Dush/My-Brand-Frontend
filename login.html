@@ -30,6 +30,7 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
+    <script src="js/login.js" defer></script>
     <title>Login &mdash; Personal Portfolio Website</title>
   </head>
   <body>
@@ -81,19 +82,21 @@
           </div>
           <div class="form__group form__show">
             <label for="password" class="form__label">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              class="form__input form__password"
-              placeholder="***************"
-              required
-            />
-            <a href="#" class="form__forgot">Forgot password?</a>
-            <div class="show-container visible">
-              <ion-icon name="moon-outline"></ion-icon>
-              <ion-icon name="sunny-outline"></ion-icon>
+            <div class="form__input-container">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form__input form__password"
+                placeholder="***************"
+                required
+              />
+              <div class="show-container visible">
+                <ion-icon name="moon-outline"></ion-icon>
+                <ion-icon name="sunny-outline"></ion-icon>
+              </div>
             </div>
+            <a href="#" class="form__forgot">Forgot password?</a>
           </div>
           <button class="btn btn--big btn--full btn--login">Login</button>
           <p class="form__account">
