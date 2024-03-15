@@ -76,6 +76,7 @@
               id="fullname"
               class="form__input form__fullname"
               placeholder="gashumba alice"
+              required
             />
           </div>
           <div class="form__group">
@@ -86,9 +87,10 @@
               id="email"
               class="form__input form__email"
               placeholder="name@email.com"
+              required
             />
           </div>
-          <div class="form__group">
+          <div class="form__group form__show">
             <label for="password" class="form__label">Password</label>
             <input
               type="password"
@@ -96,9 +98,14 @@
               id="password"
               class="form__input form__password"
               placeholder="***************"
+              required
             />
+            <div class="show-container visible">
+              <ion-icon name="moon-outline"></ion-icon>
+              <ion-icon name="sunny-outline"></ion-icon>
+            </div>
           </div>
-          <div class="form__group">
+          <div class="form__group show__form">
             <label for="password2" class="form__label">Confirm Password</label>
             <input
               type="password"
@@ -106,7 +113,12 @@
               id="password2"
               class="form__input form__password2"
               placeholder="***************"
+              required
             />
+            <div class="show-container visible">
+              <ion-icon name="moon-outline"></ion-icon>
+              <ion-icon name="sunny-outline"></ion-icon>
+            </div>
           </div>
           <button class="btn btn--big btn--full btn--signup">Signup</button>
           <p class="form__account">
