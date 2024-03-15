@@ -48,6 +48,7 @@
 }
 
 .form__input {
+  width: 100%;
   padding: 1.4rem 1.2rem;
   outline: none;
   border: none;
@@ -66,7 +67,9 @@
 }
 
 .form__title {
-  font-size: 2rem;
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
 }
 
 .form__account {
@@ -85,11 +88,21 @@
   position: relative;
 }
 
+.form__input-container {
+  width: 100%;
+  position: relative;
+}
+
+.move .show-container {
+  top: 25%;
+}
+
 .show-container {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  right: -10%;
+  transform: translateY(-50%);
+  right: 0;
   font-size: 3rem;
   color: var(--color-green);
   width: 3.2rem;
@@ -98,7 +111,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  display: none;
 }
 
 [name="moon-outline"] {

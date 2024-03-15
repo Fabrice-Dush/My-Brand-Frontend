@@ -266,10 +266,17 @@ body {
   left: 0;
   left: 0;
   padding: 2.4rem;
-  background-color: var(--color-green);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.message__correct {
+  background-color: var(--color-green);
+}
+
+.message__incorrect {
+  background-color: #dc143c;
 }
 
 .message__text {

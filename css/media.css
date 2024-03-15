@@ -195,6 +195,10 @@
 
 /*? BELOW 700px */
 @media only screen and (max-width: 44rem) {
+  .form {
+    width: 80%;
+  }
+
   .menu__btn {
     display: block;
     position: fixed;
@@ -292,6 +296,10 @@
 @media only screen and (max-width: 32rem) {
   html {
     font-size: 37.5%;
+  }
+
+  .form {
+    width: 90%;
   }
 
   .hero {
