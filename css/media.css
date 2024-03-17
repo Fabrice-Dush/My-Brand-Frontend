@@ -143,6 +143,10 @@
     font-size: 43.75%;
   }
 
+  .subscribe__container {
+    width: 85%;
+  }
+
   .hero {
     padding-top: 12rem;
   }
@@ -274,6 +278,10 @@
 
 /*? APPLIES BELOW THE WIDTH OF 600px */
 @media only screen and (max-width: 38rem) {
+  .subscribe__container {
+    width: 90%;
+  }
+
   .align--end {
     justify-self: center;
   }
@@ -351,6 +359,12 @@
     padding-left: 2.4rem !important;
     font-size: 3.2rem !important;
     text-transform: capitalize;
+  }
+
+  .subscribe__container {
+    width: 98%;
+    left: 0.6rem;
+    padding-left: 3.2rem;
   }
 }
 

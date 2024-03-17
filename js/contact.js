@@ -1,6 +1,7 @@
 "use strict";
 
 //? DOM Elements
+const sectionContact = document.querySelector(".section-contact");
 const contactForm = document.querySelector(".form__contact");
 const contactFormFullName = document.querySelector(
   ".form__contact .form__fullname"
@@ -12,6 +13,8 @@ const contactFormSubject = document.querySelector(
 const contactFormMessage = document.querySelector(
   ".form__contact .form__textarea"
 );
+
+animateSection(sectionContact);
 
 contactForm.addEventListener("submit", function (event) {
   //? 0. preventing the page from reloading

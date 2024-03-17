@@ -30,6 +30,7 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
+    <script src="js/blog.js" defer></script>
     <title>Blogs page &mdash; Personal Portfolio Website</title>
   </head>
   <body>
@@ -62,7 +63,7 @@
         <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
       </button>
     </header>
-    <section class="section__blogs">
+    <section class="section__blogs down">
       <div class="container">
         <div class="heading-secondary">Daily Blogs</div>
         <span class="subheading margin__bottom--sm">Posts</span>
@@ -142,7 +143,7 @@
               each (with code examples) so you know when best to use each of
               them for your next project!
             </p>
-            <div class="blog__owner">
+            <div class="blog__owner observed">
               <img
                 src="img/face3.jpg"
                 alt="Blog writer image"
@@ -162,5 +163,39 @@
         Rights reserved.
       </p>
     </footer>
+    <div class="subscription hidden">
+      <button class="btn btn--extra subscribe__btn">
+        <ion-icon
+          name="close-outline"
+          class="subscribe-icon subscribe-icon--close"
+        ></ion-icon>
+        <ion-icon
+          name="mail-outline"
+          class="subscribe-icon subscribe-icon--open"
+        ></ion-icon>
+        <span class="subscribe__btn--text">subscribe</span>
+      </button>
+      <div class="subscribe__container">
+        <h2 class="subscribe__heading">
+          Best resources.Best articles.Only for subscribed users.
+        </h2>
+        <p class="subscribe__text">
+          Join 100+ who subscribed and are getting updated daily when a new
+          post/article is published on our site. You will get a notification in
+          your inbox everytime we release a new article/post.
+        </p>
+        <form action="" class="subscribe__form">
+          <div class="subscribe__field-container">
+            <input
+              type="email"
+              class="subscribe__field"
+              placeholder="Enter your email"
+              required
+            />
+            <button class="btn subscribe__btn">subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

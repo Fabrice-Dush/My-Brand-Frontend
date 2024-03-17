@@ -2,6 +2,7 @@
 .section-portofolio {
   padding: 4.8rem 0;
   background-color: var(--color-text);
+  transition: all 0.2s ease;
 }
 
 .heading-secondary {

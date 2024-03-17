@@ -37,7 +37,7 @@ const printError = function (el, value) {
     </p>
     </div>
     `;
-  el?.classList?.add("move");
+  el?.classList?.add("move", "mistake");
   !el.querySelector(".error") && el.insertAdjacentHTML("beforeend", html);
   return;
 };
@@ -58,6 +58,24 @@ const printMessage = function (message, string) {
 };
 
 const removeEl = function (el) {
-  el?.classList?.remove("move");
+  el?.classList?.remove("move", "mistake");
   el?.querySelector(".error")?.remove();
+};
+
+//? Animating  ection
+const animateSection = function (section) {
+  const sectionObserver = new IntersectionObserver(
+    function ([entry], observer) {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("down");
+        observer.unobserve(entry.target);
+      }
+    },
+    {
+      root: null,
+      threshold: 0.2,
+    }
+  );
+
+  sectionObserver.observe(section);
 };

@@ -41,21 +41,21 @@ loginForm.addEventListener("submit", function (event) {
     );
   } else removeEl(loginFormPassword.parentElement);
 
-  //? 5. Display success message  && Create input fields
+  //? 5. Display success message
   if (emailTest && passwordTest && passwordTest2) {
     //? Get data from localstorage
     const signupData = JSON.parse(localStorage.getItem("signupData"));
 
     //? Authentication
     if (
-      signupData.length === 0 ||
-      !signupData.some((user) => user.email === email)
+      signupData?.length === 0 ||
+      !signupData?.some((user) => user.email === email)
     ) {
       return printMessage("You don't have an account yet", "incorrect");
     }
 
     //prettier-ignore
-    if (!signupData.some((user) => user.email === email && user.password === password)) {
+    if (!signupData?.some((user) => user.email === email && user.password === password)) {
       return printMessage("Wrong Password", "incorrect");
     } else printMessage("You're logged in. You will soon be redirected", "correct");
 
