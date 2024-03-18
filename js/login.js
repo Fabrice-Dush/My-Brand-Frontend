@@ -56,7 +56,7 @@ loginForm.addEventListener("submit", function (event) {
 
     //prettier-ignore
     if (!signupData?.some((user) => user.email === email && user.password === password)) {
-      return printMessage("Wrong Password", "incorrect");
+      return printMessage("Wrong email or password", "incorrect");
     } else printMessage("You're logged in. You will soon be redirected", "correct");
 
     //? Clear input fields
