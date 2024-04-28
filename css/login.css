@@ -13,6 +13,7 @@
 }
 
 .form {
+  position: relative;
   width: 45%;
   background: linear-gradient(
     to right bottom,
@@ -24,6 +25,11 @@
   display: inline-block;
   border-radius: 0.4rem;
   padding: 3.2rem 5rem;
+}
+
+.form__new-blog,
+.form__edit-blog {
+  width: 70%;
 }
 
 .form__group {
@@ -113,14 +119,14 @@
   justify-content: center;
 }
 
-[name="moon-outline"] {
+[name='moon-outline'] {
   display: none;
 }
 
-.visible [name="moon-outline"] {
+.visible [name='moon-outline'] {
   display: block;
 }
 
-.visible [name="sunny-outline"] {
+.visible [name='sunny-outline'] {
   display: none;
 }

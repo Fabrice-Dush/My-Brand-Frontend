@@ -4,6 +4,7 @@
 }
 
 .contact {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -44,6 +45,10 @@
   grid-column: 2;
 }
 
+.contact__form {
+  position: relative;
+}
+
 .socials {
   display: flex;
   align-items: center;
@@ -56,11 +61,12 @@
 }
 
 .form {
+  width: 100%;
   display: grid;
   gap: 2.4rem;
   grid-template-columns: repeat(2, 1fr);
   border-radius: 0.4rem;
-  background-color: var(--color-text);
+  box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.1);
   padding: 6.2rem 3.2rem;
 }
 
@@ -69,14 +75,18 @@
   font-size: 1.8rem;
   font-family: inherit;
   width: 100%;
-  padding: 1.2rem;
+  padding: 1.6rem;
   border: none;
   border-radius: 0.4rem;
+  background-color: #e2e2f5;
+  outline: none;
 }
 
 .form__input::placeholder,
 .form__textarea::placeholder {
-  color: #aaa;
+  color: var(--color-text);
+  color: #888;
+  font-family: inherit;
 }
 
 .form .form__group:nth-child(3),

@@ -13,6 +13,7 @@
 
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/media.css" />
     <script
@@ -26,9 +27,9 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <script src="js/login.js" defer></script>
+    <script src="js/newBlog.js" defer></script>
     <script src="js/helpers.js" defer></script>
-    <title>Login &mdash; Personal Portfolio Website</title>
+    <title>HomePage &mdash; Personal Portfolio Website</title>
   </head>
   <body>
     <header class="header">
@@ -39,23 +40,17 @@
       <nav class="nav">
         <ul class="nav__list">
           <li>
-            <a href="index.html" class="nav__link">Home</a>
+            <a href="index.html" class="nav__link btn btn--small active-link"
+              >Home</a
+            >
           </li>
-          <li>
-            <a href="about.html" class="nav__link">About me</a>
-          </li>
+          <li><a href="about.html" class="nav__link">About me</a></li>
           <li><a href="skills.html" class="nav__link">Skills</a></li>
           <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
           <li><a href="blogs.html" class="nav__link">Blogs</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <li><a href="dashboard.html" class="nav__link">Dashboard</a></li>
-          <li>
-            <a
-              href="login.html"
-              class="nav__link btn btn--small active-link login"
-              >Login</a
-            >
-          </li>
+          <li><a href="login.html" class="nav__link login">Login</a></li>
           <li>
             <a href="logout.html" class="nav__link logout">Logout</a>
           </li>
@@ -66,58 +61,75 @@
         <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
       </button>
     </header>
-    <section class="section-login">
+    <section class="section-blog-new">
       <div class="container form-container">
-        <p class="form__title">Login to your account to get started</p>
-        <form action="" class="form form__login">
+        <p class="form__title">Create a new blog</p>
+        <form
+          action="/http://localhost:8000/blogs"
+          method="POST"
+          class="form form__new-blog"
+          enctype="multipart/form-data"
+        >
           <div class="form__group">
-            <label for="email" class="form__label">Email</label>
+            <label for="image" class="form__label">Image</label>
+            <!-- <input
+              type="file"
+              name="image"
+              id="image"
+              class="form__input blog__image"
+              required
+            /> -->
             <input
               type="text"
-              name="email"
-              id="email"
-              class="form__input form__email"
-              placeholder="name@email.com"
+              name="image"
+              id="image"
+              class="form__input blog__image"
               required
             />
           </div>
-          <div class="form__group form__show">
-            <label for="password" class="form__label">Password</label>
-            <div class="form__input-container">
-              <input
-                type="password"
-                name="password"
-                id="password"
-                class="form__input form__password"
-                placeholder="***************"
-                required
-              />
-              <div class="show-container visible">
-                <ion-icon name="moon-outline"></ion-icon>
-                <ion-icon name="sunny-outline"></ion-icon>
-              </div>
-            </div>
-            <a href="#" class="form__forgot">Forgot password?</a>
+          <div class="form__group">
+            <label for="title" class="form__label">Title</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="form__input blog__title"
+              required
+            />
           </div>
-          <button class="btn btn--big btn--full btn--login">Login</button>
-          <p class="form__account">
-            Don't have an account?
-            <a href="signup.html" class="form__link">Signup here</a>
-          </p>
-          <p class="success hidden"></p>
+          <div class="form__group">
+            <label for="title" class="form__label">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              class="form__input blog__description"
+              cols="30"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="form__group">
+            <label for="longDescription" class="form__label"
+              >Detailed Description</label
+            >
+            <textarea
+              name="longDescription"
+              id="longDescription"
+              class="form__input blog__description"
+              cols="30"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn--big btn--full btn--login">Create Blog</button>
         </form>
       </div>
     </section>
     <footer class="footer">
       <p class="footer__text">
-        <span
-          >Designed by
-          <span class="footer__highlight">Dushimimana Fabrice</span></span
-        >
-        <span
-          >| Copyright &copy; <span class="footer__highlight year">2024</span>.
-          All Rights reserved.</span
-        >
+        Designed by <span class="footer__highlight">Dushimimana Fabrice</span> |
+        Copyright &copy; <span class="footer__highlight year">2024</span>. All
+        Rights reserved.
       </p>
     </footer>
   </body>

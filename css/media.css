@@ -135,6 +135,10 @@
   .form .form__group:nth-child(4) {
     grid-column: 1 / -1;
   }
+
+  .blog-container .blog__title {
+    font-size: 3.6rem;
+  }
 }
 
 /*? BELOW 800PX */
@@ -195,6 +199,14 @@
   .social {
     font-size: 3.2rem;
   }
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .aside {
+    flex-direction: row;
+  }
 }
 
 /*? BELOW 700px */
@@ -215,15 +227,15 @@
     font-size: 3rem;
   }
 
-  .menu__btn-icon[name="close-outline"] {
+  .menu__btn-icon[name='close-outline'] {
     display: none;
   }
 
-  .show .menu__btn .menu__btn-icon[name="menu-outline"] {
+  .show .menu__btn .menu__btn-icon[name='menu-outline'] {
     display: none;
   }
 
-  .show .menu__btn .menu__btn-icon[name="close-outline"] {
+  .show .menu__btn .menu__btn-icon[name='close-outline'] {
     display: block;
   }
 
@@ -278,6 +290,10 @@
 
 /*? APPLIES BELOW THE WIDTH OF 600px */
 @media only screen and (max-width: 38rem) {
+  .blog-container .blog__title {
+    text-align: left;
+  }
+
   .subscribe__container {
     width: 90%;
   }
@@ -304,6 +320,10 @@
 @media only screen and (max-width: 32rem) {
   html {
     font-size: 37.5%;
+  }
+
+  .blog-container .blog__description {
+    font-size: 1.6rem;
   }
 
   .form {
@@ -365,6 +385,10 @@
     width: 98%;
     left: 0.6rem;
     padding-left: 3.2rem;
+  }
+
+  .blog-container .blog__title {
+    font-size: 3rem;
   }
 }
 

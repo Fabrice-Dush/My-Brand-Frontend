@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hello I'm Dushimimana Fabrice. Welcome to my personal website. 
+    If you want to develop a website to increase your business's revenue, 
+    I'm here to help you as I'm able to design and build fully functional websites.
+     You can contact me using the form provided on the site or you can call me directly on my phone number."
+    />
+
+    <link rel="icon" href="img/icon.png" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      defer
+    ></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+    <script src="js/helpers.js" defer></script>
+    <title>HomePage &mdash; Personal Portfolio Website</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        Fab<span class="logo__in">ri</span><span class="logo__inn">ce</span
+        ><span class="logo__inner"> Co.</span>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li>
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li><a href="about.html" class="nav__link">About me</a></li>
+          <li><a href="skills.html" class="nav__link">Skills</a></li>
+          <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
+          <li><a href="blogs.html" class="nav__link">Blogs</a></li>
+          <li><a href="contact.html" class="nav__link">Contact</a></li>
+          <li>
+            <a
+              href="dashboard.html"
+              class="nav__link btn btn--small active-link"
+              >Dashboard</a
+            >
+          </li>
+          <li><a href="login.html" class="nav__link login">Login</a></li>
+          <li>
+            <a href="logout.html" class="nav__link logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="menu__btn">
+        <ion-icon name="menu-outline" class="menu__btn-icon"></ion-icon>
+        <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
+      </button>
+    </header>
+    <!-- <div class="container"></div> -->
+    <section class="section__dashboard">
+      <div class="dashboard">
+        <aside class="aside">
+          <!-- <div class="aside__container" data-id="1">
+            <!-- <ion-icon name="stats-chart-outline" class="aside__icon"></ion-icon>
+            <a href="http://localhost:8000/statistics" class="aside__link"
+              >Dashboard</a
+            >
+          </div> -->
+          <div class="aside__container">
+            <ion-icon name="people-outline" class="aside__icon"></ion-icon>
+            <a
+              href="http://localhost:8000/users"
+              data-id="1"
+              class="aside__link users__link"
+              >Users</a
+            >
+          </div>
+          <div class="aside__container">
+            <ion-icon name="bar-chart-outline" class="aside__icon"></ion-icon>
+            <a
+              href="http://localhost:8000/blogs"
+              data-id="2"
+              class="aside__link blogs__link"
+              >Blogs</a
+            >
+          </div>
+          <div class="aside__container aside__container-messages">
+            <ion-icon
+              name="chatbox-ellipses-outline"
+              class="aside__icon"
+            ></ion-icon>
+            <a
+              href="http://localhost:8000/contact"
+              data-id="3"
+              class="aside__link messages__link"
+              >Messages</a
+            >
+          </div>
+          <div class="aside__container">
+            <ion-icon name="chatbubbles-outline" class="aside__icon"></ion-icon>
+            <a
+              href="http://localhost:8000/subscribe"
+              data-id="4"
+              class="aside__link subscribers__link"
+              >Subscribers</a
+            >
+          </div>
+        </aside>
+        <main class="main">
+          <div class="main__container main__container--1 users" data-id="1">
+            <p class="users__text">All users</p>
+            <table class="table table__users">
+              <thead>
+                <tr>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Emai Address</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody class="tbody__users">
+                <!-- <
+                <tr>
+                  <td>Dushimimana</td>
+                  <td>Fabrice</td>
+                  <td>ancefupride@gmail.com</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/users/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__user"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dushimimana</td>
+                  <td>Fabrice</td>
+                  <td>ancefupride@gmail.com</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/users/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__user"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dushimimana</td>
+                  <td>Fabrice</td>
+                  <td>ancefupride@gmail.com</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/users/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__user"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dushimimana</td>
+                  <td>Fabrice</td>
+                  <td>ancefupride@gmail.com</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/users/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__user"
+                      >Delete</a
+                    >
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div class="main__container main__container--2 blogs" data-id="2">
+            <p class="users__text">All blogs</p>
+            <table class="table table__blogs">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Title</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody class="tbody__blogs">
+                <!-- <tr>
+                  <td>1</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--modify update__blog"
+                      >Update</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--modify update__blog"
+                      >Update</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--modify update__blog"
+                      >Update</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div class="main__container main__container--3 messages" data-id="3">
+            <p class="users__text">All messages</p>
+            <table class="table table__messages">
+              <thead>
+                <tr>
+                  <th>FirstName</th>
+                  <th>Email address</th>
+                  <th>Message</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody class="tbody__messages">
+                <!-- <tr>
+                  <td>Dushimimana</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>I want an ecommerce website for my branding</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/contact/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--modify update__blog"
+                      >Update</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>How coding sucks and why ?</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--modify update__blog"
+                      >Update</a
+                    >
+                  </td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/blogs/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="main__container main__container--4 subscribers"
+            data-id="4"
+          >
+            <p class="users__text">All subscribers</p>
+            <table class="table table__subscribers">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Email address</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody class="tbody__subscribers">
+                <!-- <tr>
+                  <td>1</td>
+                  <td>ancefupride@gmail.com</td>
+                  <td>
+                    <a
+                      href="http://localhost:8000/subscribers/1e456frht4956u3tu4340f3"
+                      class="btn btn--small btn--delete delete__blog"
+                      >Delete</a
+                    >
+                  </td>
+                </tr>
+               -->
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </section>
+    <footer class="footer">
+      <p class="footer__text">
+        Designed by <span class="footer__highlight">Dushimimana Fabrice</span> |
+        Copyright &copy; <span class="footer__highlight year">2024</span>. All
+        Rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

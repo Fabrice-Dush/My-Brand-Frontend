@@ -13,10 +13,6 @@
   min-height: 100vh;
 }
 
-/* .sticky.section__hero {
-  padding-top: 8rem;
-} */
-
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -55,8 +51,6 @@
 }
 
 .hero__img {
-  /* margin-top: 1.8rem;
-  margin-left: 2.4rem; */
   width: 80%;
   height: 80%;
   object-fit: cover;

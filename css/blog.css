@@ -1,205 +1,201 @@
-.section__blogs {
-  padding: 4.8rem 0;
-  transition: all 0.2s ease;
-}
-
-.heading-secondary {
-  font-weight: 700;
-}
-
-.blog__heading {
-  font-size: 2.4rem;
-  line-height: 1.6;
-}
-
-.blogs {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3.2rem;
+body {
+  background-color: #dde9f3;
 }
 
 .blog {
-  box-shadow: 0 10rem 6.4rem 0 rgba(0, 0, 0, 0.05);
-  border-radius: 0.6rem;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s ease-in;
-}
-
-.blog:hover {
-  transform: translateY(-1rem);
-}
-
-.blog__header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.6rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #555;
-}
-
-.dot {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--color-green);
-}
-
-.blog__content {
-  padding: 3.2rem;
-}
-
-.blog__title {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 1.2rem;
-}
-
-.blog__text {
-  font-size: 1.6rem;
-  line-height: 1.6;
-  margin-bottom: 1.8rem;
-}
-
-.blog__owner {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 1.4rem;
-}
-
-.blog__tag {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  /* color: var(--color-green); */
-  color: #fff;
-  font-weight: 600;
-  /* background-color: #d4d8dd;
-  background-color: var(--color-pink); */
-  background-color: var(--color-green);
-  font-size: 1.2rem;
-  border-radius: 10rem;
+  width: 70%;
+  margin: 10rem auto;
 }
 
 .blog__img {
   width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 3.2rem;
 }
 
-.blog__owner-name {
-  font-size: 1.4rem;
-  font-weight: 600;
+.blog__title {
+  font-size: 4.8rem;
+  line-height: 1.2;
+  margin-bottom: 7rem;
+  color: var(--color-text-heading);
+}
+
+.blog__author {
+  font-size: 2rem;
+  letter-spacing: 1px;
   color: var(--color-green);
 }
 
-.blog__owner-img {
-  width: 4.8rem;
-  height: 4.8rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/*? Subscribe */
-.subscribe__container {
-  position: fixed;
-  background-color: rgb(26, 26, 26);
-  color: var(--color-white);
-  padding: 5.2rem;
-  width: 70%;
-  position: fixed;
-  bottom: 13rem;
-  left: 2.4rem;
-  border-radius: 9px;
-  display: none;
-}
-
-.subscribe__heading {
-  font-size: 2.6rem;
-  line-height: 1.4;
-  margin-bottom: 1.8rem;
-}
-
-.subscribe__text {
-  font-size: 2rem;
+.blog__description {
+  font-size: 2.4rem;
   line-height: 1.8;
+  margin-bottom: 5rem;
+}
+
+.form {
+  margin-bottom: 5rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form__label {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--color-text-heading);
+}
+
+.form__textarea {
+  padding: 1.2rem;
+  font-size: 2.4rem;
+  font-family: inherit;
+  outline: none;
+  border: 2px solid #a7bed3;
+  border-radius: 0.6rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1.4rem 5.2rem;
+  font-size: 1.8rem;
+}
+
+.btn--comment {
+  background-color: var(--color-green);
+  color: #fff;
+}
+
+.btn:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+/*? COMMENTS */
+.comments {
+  position: relative;
+}
+
+.comments__number {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 4.4rem;
+}
+
+.comment {
   margin-bottom: 3.6rem;
 }
 
-.subscribe__form {
-  width: 100%;
-}
-
-.subscribe__field-container {
-  width: 100%;
+.comment--inner {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr auto;
+  grid-auto-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1.6rem;
+  row-gap: 1rem;
+  margin-bottom: 1.2rem;
 }
 
-.subscribe__field {
-  color: var(--color-white);
-  font-size: 1.8rem;
-  padding: 1.6rem;
-  background: none;
-  outline: none;
-  border: 1px solid var(--color-white);
-  border-radius: 10rem;
-  font-family: inherit;
+.comment .box-user {
+  grid-column: 1;
+  grid-row: span 2;
 }
 
-.subscribe__field::placeholder {
+.comment__user {
+  grid-column: 2;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.comment__text {
+  grid-column: 2;
   font-size: 2rem;
-  font-family: inherit;
-  color: #aaa;
+  font-weight: 400;
 }
 
-.subscribe__btn {
-  padding: 1rem 4.8rem;
-  background-color: #f51767;
-  color: var(--color-white);
+.box-author {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.blog__date {
   font-size: 1.6rem;
-  border-radius: 20rem;
 }
 
-.subscribe-icon {
-  font-size: 4.8rem;
+.blog__read {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
 }
 
-.btn--extra {
-  font-size: 1.8rem;
-  text-transform: uppercase;
+.blog__author {
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+.blog__inner {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.like-container {
+  padding: 0.4rem 1.6rem;
+  width: 10rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #f51767;
-  color: var(--color-white);
-  padding: 1.2rem 3.6rem;
-  border-radius: 20rem;
-  position: fixed;
-  bottom: 5rem;
-  left: 2.4rem;
+  background-color: #a7bed3;
+  border-radius: 10rem;
+  margin-bottom: 3.2rem;
 }
 
-.subscribe-icon--close {
-  display: none;
-  z-index: 10;
-  color: white;
+.btn-like {
+  border: none;
+  background: none;
+  outline: none;
 }
 
-.open .subscribe-icon--open {
-  display: none;
+.btn-like > * {
+  font-size: 3rem;
+  color: var(--color-pink);
+  cursor: pointer;
 }
 
-.open .subscribe-icon--close {
-  display: block;
+.like__number {
+  font-size: 2.4rem;
 }
 
-.open .subscribe__btn--text {
-  display: none;
+.btn {
+  color: #fff;
 }
 
-.open .subscribe__container {
-  display: block;
+.btn--small {
+  padding: 0.6rem 1.8rem;
+  font-size: 1.2rem;
+  transform: translateX(6.5rem);
+}
+
+.btn--reset {
+  background-color: #fff;
+  color: var(--color-text-heading);
+}
+
+.container-button {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.blog-container {
+  min-height: 100vh;
 }

@@ -1,10 +1,10 @@
-"use strict";
+'use strict';
 
 //? DOM Elements
-const showEl = document.querySelector(".show-container");
-const headerEl = document.querySelector(".header");
-const menuBtn = document.querySelector(".menu__btn");
-const yearEl = document.querySelector(".year");
+const showEl = document.querySelector('.show-container');
+const headerEl = document.querySelector('.header');
+const menuBtn = document.querySelector('.menu__btn');
+const yearEl = document.querySelector('.year');
 
 //? Globals
 const namePattern = /(^[a-z\s]{10,}$)/gi;
@@ -18,9 +18,9 @@ let contactData = [];
 
 //? Functions
 const toggleClass = function () {
-  headerEl.classList.toggle("show");
+  headerEl.classList.toggle('show');
 };
-menuBtn.addEventListener("click", toggleClass);
+menuBtn.addEventListener('click', toggleClass);
 
 const calcYear = function () {
   const year = new Date().getFullYear();
@@ -37,8 +37,8 @@ const printError = function (el, value) {
     </p>
     </div>
     `;
-  el?.classList?.add("move", "mistake");
-  !el.querySelector(".error") && el.insertAdjacentHTML("beforeend", html);
+  el?.classList?.add('move', 'mistake');
+  !el.querySelector('.error') && el.insertAdjacentHTML('beforeend', html);
   return;
 };
 
@@ -46,20 +46,20 @@ const printMessage = function (message, string) {
   const html = `
       <div class="message message__${string}">
         <p class="message__text">${message} ${
-    string === "correct" ? "😎😎😎" : "😡😡😡"
+    string === 'correct' ? '😎😎😎' : '😡😡😡'
   }</p>
       </div>`;
-  !document.body.querySelector(".message") &&
-    document.body.insertAdjacentHTML("afterbegin", html);
+  !document.body.querySelector('.message') &&
+    document.body.insertAdjacentHTML('beforeend', html);
 
   setTimeout(function () {
-    document.body.querySelector(".message")?.remove();
+    document.body.querySelector('.message')?.remove();
   }, 3000);
 };
 
 const removeEl = function (el) {
-  el?.classList?.remove("move", "mistake");
-  el?.querySelector(".error")?.remove();
+  el?.classList?.remove('move', 'mistake');
+  el?.querySelector('.error')?.remove();
 };
 
 //? Animating  ection
@@ -67,7 +67,7 @@ const animateSection = function (section) {
   const sectionObserver = new IntersectionObserver(
     function ([entry], observer) {
       if (entry.isIntersecting) {
-        entry.target.classList.remove("down");
+        entry.target.classList.remove('down');
         observer.unobserve(entry.target);
       }
     },

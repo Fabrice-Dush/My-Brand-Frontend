@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hello I'm Dushimimana Fabrice. Welcome to my personal website. 
-    If you want to develop a website to increase your business's revenue, 
-    I'm here to help you as I'm able to design and build fully functional websites.
-     You can contact me using the form provided on the site or you can call me directly on my phone number."
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Open Sans"
-    />
-
-    <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/blog.css" />
     <link rel="stylesheet" href="css/media.css" />
@@ -30,8 +15,14 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <script src="js/blog.js" defer></script>
-    <title>Blogs page &mdash; Personal Portfolio Website</title>
+    <script src="js/blog.js" type="module" defer></script>
+    <script src="js/createComment.js" type="module" defer></script>
+    <script src="js/deleteComment.js" type="module" defer></script>
+    <script src="js/like.js" type="module" defer></script>
+    <script src="js/helpers.js" defer></script>
+    <script src="js/deleteBlog.js" defer></script>
+    <script src="js/editBlog.js" defer></script>
+    <title>Blog page &mdash; Personal Portfolio Website</title>
   </head>
   <body>
     <header class="header">
@@ -49,13 +40,13 @@
           </li>
           <li><a href="skills.html" class="nav__link">Skills</a></li>
           <li><a href="portfolio.html" class="nav__link">Portfolio</a></li>
-          <li>
-            <a href="blog.html" class="nav__link btn btn--small active-link"
-              >Blog</a
-            >
-          </li>
+          <li><a href="blogs.html" class="nav__link">Blogs</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
-          <li><a href="login.html" class="nav__link">Login</a></li>
+          <li><a href="dashboard.html" class="nav__link">Dashboard</a></li>
+          <li><a href="login.html" class="nav__link login">Login</a></li>
+          <li>
+            <a href="logout.html" class="nav__link logout">Logout</a>
+          </li>
         </ul>
       </nav>
       <button class="menu__btn">
@@ -63,99 +54,88 @@
         <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
       </button>
     </header>
-    <section class="section__blogs down">
-      <div class="container">
-        <div class="heading-secondary">Daily Blogs</div>
-        <span class="subheading margin__bottom--sm">Posts</span>
-        <p class="blog__heading">
-          Free posts, guides, and tutorials to help you learn in demand skills,
-          get hired, and advance your career.
-        </p>
+    <div class="container">
+      <article class="blog-container">
+        <!-- <div class="container-button">
+          <a href="/blogs/why_coding_is_fun/edit" class="btn btn--modify"
+          >Modify</a
+          >
+          <form action="/blogs/why_coding_is_fun?_method=DELETE" method="POST">
+            <button class="btn btn--delete">Delete</button>
+          </form>
+        </div>
+        <h1 class="heading-primary blog__title">
+          Deno vs. Node.js vs Bun: Full Comparison Guide
+        </h1>
+        <div class="box-author">
+          <div class="box-user">DF</div>
+          <div class="blog__read__data-box">
+            <p class="blog__author">By Dushimimana Fabrice</p>
+          <div class="blog__inner">
+            <p class="blog__date">25, August 2024</p>
+            <p class="blog__read">45 min read</p>
+          </div>
+        </div>
       </div>
-      <div class="container blogs">
-        <article class="blog">
-          <img src="img/deno.webp" alt="Blog image" class="blog__img" />
-          <div class="blog__content">
-            <div class="blog__header">
-              <p class="blog__date">Feb 27th, 2024</p>
-              <span class="dot"></span>
-              <p class="blog__read">24 min read</p>
-            </div>
-            <p class="blog__title">
-              Deno vs. Node.js vs Bun: Full Comparison Guide
-            </p>
-            <p class="blog__text">
-              Not sure which of these runtimes to use in your new project or if
-              it's worth migrating? There's a clear winner in the deno vs node
-              debate. Could bun overthrow both?
-            </p>
-            <div class="blog__owner">
-              <img
-                src="img/face1.jpg"
-                alt="Blog writer image"
-                class="blog__owner-img"
-              />
-              <p class="blog__owner-name">Dushimimana Fabrice</p>
-            </div>
-            <p class="blog__tag">Web development</p>
-          </div>
-        </article>
-        <article class="blog">
-          <img src="img/habits.webp" alt="Blog image" class="blog__img" />
-          <div class="blog__content">
-            <div class="blog__header">
-              <p class="blog__date">Feb 27th, 2024</p>
-              <span class="dot"></span>
-              <p class="blog__read">24 min read</p>
-            </div>
-            <p class="blog__title">
-              Become a Great Software Engineer (Use These 4 Habits)
-            </p>
-            <p class="blog__text">
-              I'm sure you've come across a few people who are truly exceptional
-              devs. But what makes them great? And how can YOU be great? It's
-              pretty simple in theory, but harder in practice.
-            </p>
-            <div class="blog__owner">
-              <img
-                src="img/face2.jpg"
-                alt="Blog writer image"
-                class="blog__owner-img"
-              />
-              <p class="blog__owner-name">Umutambyi Gad</p>
-            </div>
-            <p class="blog__tag">Web development</p>
-          </div>
-        </article>
-        <article class="blog blog--3">
-          <img src="img/typescript.webp" alt="Blog image" class="blog__img" />
-          <div class="blog__content">
-            <div class="blog__header">
-              <p class="blog__date">Feb 27th, 2024</p>
-              <span class="dot"></span>
-              <p class="blog__read">24 min read</p>
-            </div>
-            <p class="blog__title">
-              TypeScript vs. JavaScript… Which Is Better and Why?
-            </p>
-            <p class="blog__text">
-              You should 100% learn both. But these are the key pros and cons of
-              each (with code examples) so you know when best to use each of
-              them for your next project!
-            </p>
-            <div class="blog__owner observed">
-              <img
-                src="img/face3.jpg"
-                alt="Blog writer image"
-                class="blog__owner-img"
-              />
-              <p class="blog__owner-name">Tuyishime Daniel</p>
-            </div>
-            <p class="blog__tag">Web development</p>
-          </div>
-        </article>
+      <img src="img/deno.webp" alt="<%=blog.title%>" class="blog__img" />
+      <p class="blog__description">
+        However, in this guide, we’re going to look at both runtimes, their
+        defining features, and why people still prefer to use Node.js for now
+        (even if Deno might technically be the better option). This way, if
+        you’re about to start a new project from scratch and are not sure which
+        to use, or are thinking about what runtime to learn next to best fit
+        your JS skills, you can make the right decision for yourself. Oh and
+        just for fun? We’re also going to take a look at the latest runtime on
+        the block that's getting all the hype, Bun, and see how that compares to
+        Node.js and Deno as well.
+      </p>
+      <div class="like-container">
+        <form action="/blogs/why_coding_is_fun/likes" method="POST">
+          <button class="btn-like like">
+            <ion-icon name="heart"></ion-icon>
+          </button>
+        </form>
+        <p class="like__number">5</p>
       </div>
-    </section>
+      <form
+      action="/blogs/blog.slug>/comments"
+      method="post"
+      class="form form__comment"
+      >
+      <div class="form__group">
+          <label for="comment" class="form__label">Leave a comment</label>
+          <textarea
+          name="comment"
+          id="comment"
+          cols="30"
+          rows="3"
+          class="form__textarea"
+          required
+          ></textarea>
+        </div>
+        <button class="btn btn--comment">Comment</button>
+        <button type="reset" class="btn btn--reset">Cancel</button>
+      </form>
+      <div class="comments">
+        <h2 class="comments__number">5 Comments</h2>
+        <div class="comment">
+          <div class="comment--inner">
+            <div class="box-user">DF</div>
+            <p class="comment__user">Dushimimana Fabrice</p>
+            <p class="comment__text">
+              I love this blog post. I wish you would create more
+            </p>
+          </div>
+          <form
+            action="/blogs/<%=blog.slug%>/comments/<%=comment.id%>?_method=DELETE"
+            method="POST"
+            >
+            <button class="btn btn--small btn--delete">Delete</button>
+          </form>
+        </div>
+      </div> -->
+      </article>
+    </div>
     <footer class="footer">
       <p class="footer__text">
         Designed by <span class="footer__highlight">Dushimimana Fabrice</span> |
@@ -163,39 +143,5 @@
         Rights reserved.
       </p>
     </footer>
-    <div class="subscription hidden">
-      <button class="btn btn--extra subscribe__btn">
-        <ion-icon
-          name="close-outline"
-          class="subscribe-icon subscribe-icon--close"
-        ></ion-icon>
-        <ion-icon
-          name="mail-outline"
-          class="subscribe-icon subscribe-icon--open"
-        ></ion-icon>
-        <span class="subscribe__btn--text">subscribe</span>
-      </button>
-      <div class="subscribe__container">
-        <h2 class="subscribe__heading">
-          Best resources.Best articles.Only for subscribed users.
-        </h2>
-        <p class="subscribe__text">
-          Join 100+ who subscribed and are getting updated daily when a new
-          post/article is published on our site. You will get a notification in
-          your inbox everytime we release a new article/post.
-        </p>
-        <form action="" class="subscribe__form">
-          <div class="subscribe__field-container">
-            <input
-              type="email"
-              class="subscribe__field"
-              placeholder="Enter your email"
-              required
-            />
-            <button class="btn subscribe__btn">subscribe</button>
-          </div>
-        </form>
-      </div>
-    </div>
   </body>
 </html>
