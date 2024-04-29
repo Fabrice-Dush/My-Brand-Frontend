@@ -45,11 +45,14 @@ loginForm.addEventListener('submit', async function (event) {
     } else removeEl(loginFormPassword.parentElement);
 
     if (emailTest && passwordTest && passwordTest2) {
-      const res = await fetch(`http://localhost:8000/api/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        ` https://my-brand-backend-n8rt.onrender.com/api/login`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await res.json();
       if (!res.ok) throw new Error(data.errors);
 

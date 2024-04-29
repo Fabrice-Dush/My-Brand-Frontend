@@ -28,10 +28,13 @@ const init = async function () {
     const token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
 
-    const res = await fetch('http://localhost:8000/api/contact', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json', token },
-    });
+    const res = await fetch(
+      'https://my-brand-backend-n8rt.onrender.com/api/contact',
+      {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json', token },
+      }
+    );
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);

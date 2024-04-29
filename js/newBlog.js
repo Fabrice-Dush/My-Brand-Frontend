@@ -25,11 +25,14 @@ form.addEventListener('submit', async function (event) {
     //? render spinner
     renderSpinner(this);
 
-    const res = await fetch(`http://localhost:8000/api/blogs`, {
-      method: 'POST',
-      headers: { token },
-      body: formData,
-    });
+    const res = await fetch(
+      `https://my-brand-backend-n8rt.onrender.com/api/blogs`,
+      {
+        method: 'POST',
+        headers: { token },
+        body: formData,
+      }
+    );
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);

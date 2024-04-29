@@ -42,7 +42,7 @@ export const createTemplateComments = function (blog) {
               ${
                 user?._id === comment.author._id || user?.role === 'admin'
                   ? `<a
-            href="http://localhost:8000/api/blogs/${blog.slug}/comments/${comment._id}"
+            href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}/comments/${comment._id}"
             class="btn btn--small btn--delete btn--delete-comment"
             >
               Delete
@@ -72,7 +72,7 @@ const createTemplateComment = function (comment, blog) {
         ${
           user?._id === comment.author._id || user?.role === 'admin'
             ? `<a
-              href="http://localhost:8000/api/blogs/${blog.slug}/comments/${comment._id}"
+              href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}/comments/${comment._id}"
               class="btn btn--small btn--delete btn--delete-comment"
             >
               Delete
@@ -90,10 +90,10 @@ export const createTemplateBlog = function (blog) {
   <div class="container-button">
   ${
     user?._id === blog.author?._id || user?.role === 'admin'
-      ? `<a href="http://localhost:8000/api/blogs/${blog.slug}" class="btn btn--modify"
+      ? `<a href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}" class="btn btn--modify"
           >Modify</a
         >
-          <a href="http://localhost:8000/api/blogs/${blog.slug}" class="btn btn--delete btn--delete-blog">Delete</a>
+          <a href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}" class="btn btn--delete btn--delete-blog">Delete</a>
           `
       : ''
   }
@@ -120,7 +120,7 @@ export const createTemplateBlog = function (blog) {
        ${blog.longDescription}
       </p>
       <div class="like-container">
-        <form action="http://localhost:8000/api/blogs/${
+        <form action=""https://my-brand-backend-n8rt.onrender.com/api/blogs/${
           blog.slug
         }/likes" method="POST" class="form__like">
           <button class="btn-like like">
@@ -134,7 +134,9 @@ export const createTemplateBlog = function (blog) {
         <p class="like__number">${blog.likes.length}</p>
       </div>
       <form
-        action="http://localhost:8000/api/blogs/${blog.slug}/comments"
+        action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
+          blog.slug
+        }/comments"
         method="POST"
         class="form form__comment"
       >
@@ -166,7 +168,7 @@ export const createTemplateLike = function (blog) {
   const likeContainer = document.querySelector('.like-container');
 
   const html = `
-  <form action="http://localhost:8000/api/blogs/${
+  <form action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
     blog.slug
   }/likes" method="POST" class="form__like">
   <button class="btn-like like">
@@ -195,7 +197,8 @@ export const createTemplateBlogs = function (blog) {
         <p class="blog__read">${blog.readMinutes} min read</p>
       </div>
       <p class="blog__title">
-        <a href="http://localhost:8000/api/blogs/${
+     
+        <a href=" https://my-brand-backend-n8rt.onrender.com/api/blogs/${
           blog.slug
         }" class="blog__link">
           ${blog.title}

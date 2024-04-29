@@ -76,11 +76,14 @@ signupForm.addEventListener('submit', async function (event) {
       passwordTest2 &&
       passwordTestFinal
     ) {
-      const res = await fetch(`http://localhost:8000/api/signup`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName, email, password }),
-      });
+      const res = await fetch(
+        ` https://my-brand-backend-n8rt.onrender.com/api/signup`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullName, email, password }),
+        }
+      );
       const data = await res.json();
       if (!res.ok) throw new Error(data.errors.email);
 
