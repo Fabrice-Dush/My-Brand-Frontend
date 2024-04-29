@@ -6,6 +6,7 @@ const loginFormPassword = document.querySelector(
   '.form__login .form__password'
 );
 const successEl = document.querySelector('.success');
+const errorEl = document.querySelector('.error-container');
 
 //? Login form validation
 loginForm.addEventListener('submit', async function (event) {
@@ -44,7 +45,7 @@ loginForm.addEventListener('submit', async function (event) {
     } else removeEl(loginFormPassword.parentElement);
 
     if (emailTest && passwordTest && passwordTest2) {
-      const res = await fetch(`http://localhost:8000/login`, {
+      const res = await fetch(`http://localhost:8000/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -72,7 +73,11 @@ loginForm.addEventListener('submit', async function (event) {
       }, 1500);
     }
   } catch (err) {
-    printMessage('Wrong email or password', 'incorrect');
+    errorEl.classList.remove('hidden');
+    errorEl.textContent = 'Wrong Email or Password';
+    setTimeout(() => {
+      errorEl.classList.add('hidden');
+    }, 1500);
   }
 });
 

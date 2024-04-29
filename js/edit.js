@@ -1,23 +1,22 @@
+import { renderSpinner } from './utils.js';
+
 const formContainer = document.querySelector('.form-container');
 console.log(formContainer);
 
 const createTemplateForm = function () {
   const blog = JSON.parse(localStorage.getItem('blog'));
-  console.log(blog);
   const html = `
-     <form
-          action="http://localhost:8000/blogs/${blog.slug}"
-          method="POST"
-          class="form 
-          form__edit-blog"
+        <form
+          action="http://localhost:8000/api/blogs/${blog.slug}"
+          enctype="multipart/form-data" 
+          class="form form__edit-blog"
         >
           <div class="form__group">
             <label for="image" class="form__label">Image Url</label>
-            <input
-              type="text"
+             <input
+              type="file"
               name="image"
               id="image"
-              value="${blog.image}"
               class="form__input blog__image"
               required
             />
@@ -74,29 +73,24 @@ console.log(editForm.getAttribute('action'));
 editForm?.addEventListener('submit', async function (event) {
   try {
     event.preventDefault();
-    const title = this.title.value;
-    const description = this.description.value;
-    const longDescription = this.longDescription.value;
-    const image = this.image.value;
     const url = this.getAttribute('action');
+    if (!url) return location.assign('blogs.html');
     const token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
+
+    const formData = new FormData(this);
+
+    //? render spinner
+    renderSpinner(this);
+
     const res = await fetch(url, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json', token },
-      body: JSON.stringify({
-        image,
-        title,
-        description,
-        longDescription,
-      }),
+      headers: { token },
+      body: formData,
     });
     const data = await res.json();
-    console.log(data);
     localStorage.setItem('href', data.url);
     location.assign('blog.html');
-    // setTimeout(() => {
-    // }, 1500);
     if (!res.ok) throw new Error(data.errors);
   } catch (err) {
     console.error('Error in editing blog: ', err);

@@ -38,6 +38,7 @@ body {
 
 .form {
   margin-bottom: 5rem;
+  position: relative;
 }
 
 .form__group {

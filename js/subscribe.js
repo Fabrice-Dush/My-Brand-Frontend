@@ -9,6 +9,7 @@ const blogsEl = document.querySelector('.blogs');
 const blogEl = document.querySelector('.blog');
 const observedEl = document.querySelector('.observed');
 const successEl = document.querySelector('.success');
+const errorEl = document.querySelector('.error-container');
 
 animateSection(sectionBlogs);
 
@@ -42,6 +43,7 @@ subscribeForm.addEventListener('submit', async function (event) {
         body: JSON.stringify({ email }),
       });
       const data = await res.json();
+      console.log(data.errors);
       if (!res.ok) throw new Error(data.errors);
 
       const { data: subscribers } = data;
@@ -60,7 +62,12 @@ subscribeForm.addEventListener('submit', async function (event) {
       printMessage('Hang in there! You already subscribed...', 'correct');
     }
   } catch (err) {
-    console.error('Error subscribing: ', err);
+    errorEl.classList.remove('hidden');
+    errorEl.textContent = 'You already subscribed';
+    setTimeout(() => {
+      errorEl.classList.add('hidden');
+    }, 1500);
+    console.log(err.code);
   }
 });
 

@@ -1,8 +1,6 @@
 setTimeout(() => {
   const btnDelete = document.querySelector('.btn--delete-blog');
 
-  console.log(btnDelete);
-
   btnDelete?.addEventListener('click', async function (event) {
     try {
       event.preventDefault();

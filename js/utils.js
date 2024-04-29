@@ -1,6 +1,14 @@
 const blogEl = document.querySelector('.blog-container');
 const user = JSON.parse(localStorage.getItem('user'));
 
+export const renderSpinner = function (el) {
+  const html = `
+  <div class="spinner"></div>
+  `;
+  el.innerHTML = '';
+  el.insertAdjacentHTML('beforeend', html);
+};
+
 export const createTemplateComments = function (blog) {
   const commentsContainer = document.querySelector('.comments');
   commentsContainer.innerHTML = '';
@@ -34,7 +42,7 @@ export const createTemplateComments = function (blog) {
               ${
                 user?._id === comment.author._id || user?.role === 'admin'
                   ? `<a
-            href="http://localhost:8000/blogs/${blog.slug}/comments/${comment._id}"
+            href="http://localhost:8000/api/blogs/${blog.slug}/comments/${comment._id}"
             class="btn btn--small btn--delete btn--delete-comment"
             >
               Delete
@@ -64,7 +72,7 @@ const createTemplateComment = function (comment, blog) {
         ${
           user?._id === comment.author._id || user?.role === 'admin'
             ? `<a
-              href="http://localhost:8000/blogs/${blog.slug}/comments/${comment._id}"
+              href="http://localhost:8000/api/blogs/${blog.slug}/comments/${comment._id}"
               class="btn btn--small btn--delete btn--delete-comment"
             >
               Delete
@@ -82,10 +90,10 @@ export const createTemplateBlog = function (blog) {
   <div class="container-button">
   ${
     user?._id === blog.author?._id || user?.role === 'admin'
-      ? `<a href="http://localhost:8000/blogs/${blog.slug}" class="btn btn--modify"
+      ? `<a href="http://localhost:8000/api/blogs/${blog.slug}" class="btn btn--modify"
           >Modify</a
         >
-          <a href="http://localhost:8000/blogs/${blog.slug}" class="btn btn--delete btn--delete-blog">Delete</a>
+          <a href="http://localhost:8000/api/blogs/${blog.slug}" class="btn btn--delete btn--delete-blog">Delete</a>
           `
       : ''
   }
@@ -112,7 +120,7 @@ export const createTemplateBlog = function (blog) {
        ${blog.longDescription}
       </p>
       <div class="like-container">
-        <form action="http://localhost:8000/blogs/${
+        <form action="http://localhost:8000/api/blogs/${
           blog.slug
         }/likes" method="POST" class="form__like">
           <button class="btn-like like">
@@ -126,7 +134,7 @@ export const createTemplateBlog = function (blog) {
         <p class="like__number">${blog.likes.length}</p>
       </div>
       <form
-        action="http://localhost:8000/blogs/${blog.slug}/comments"
+        action="http://localhost:8000/api/blogs/${blog.slug}/comments"
         method="POST"
         class="form form__comment"
       >
@@ -158,7 +166,7 @@ export const createTemplateLike = function (blog) {
   const likeContainer = document.querySelector('.like-container');
 
   const html = `
-  <form action="http://localhost:8000/blogs/${
+  <form action="http://localhost:8000/api/blogs/${
     blog.slug
   }/likes" method="POST" class="form__like">
   <button class="btn-like like">
@@ -179,7 +187,7 @@ export const createTemplateLike = function (blog) {
 export const createTemplateBlogs = function (blog) {
   const html = `
       <article class="blog">
-    <img src="${blog?.image}" alt="${blog?.title}" class="blog__img" />
+    <img src="${blog.image}" alt="${blog?.title}" class="blog__img" />
     <div class="blog__content">
       <div class="blog__header">
         <p class="blog__date">${blog?.date}</p>
@@ -187,7 +195,9 @@ export const createTemplateBlogs = function (blog) {
         <p class="blog__read">${blog.readMinutes} min read</p>
       </div>
       <p class="blog__title">
-        <a href="http://localhost:8000/blogs/${blog.slug}" class="blog__link">
+        <a href="http://localhost:8000/api/blogs/${
+          blog.slug
+        }" class="blog__link">
           ${blog.title}
         </a>
       </p>

@@ -27,7 +27,7 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <script src="js/newBlog.js" defer></script>
+    <script src="js/newBlog.js" type="module" defer></script>
     <script src="js/helpers.js" defer></script>
     <title>HomePage &mdash; Personal Portfolio Website</title>
   </head>
@@ -64,28 +64,25 @@
     <section class="section-blog-new">
       <div class="container form-container">
         <p class="form__title">Create a new blog</p>
-        <form
-          action="/http://localhost:8000/blogs"
-          method="POST"
-          class="form form__new-blog"
-          enctype="multipart/form-data"
-        >
+        <form class="form form__new-blog" enctype="multipart/form-data">
+          <div class="success hidden"></div>
+          <div class="error-container hidden"></div>
           <div class="form__group">
             <label for="image" class="form__label">Image</label>
-            <!-- <input
+            <input
               type="file"
               name="image"
               id="image"
               class="form__input blog__image"
               required
-            /> -->
-            <input
+            />
+            <!-- <input
               type="text"
               name="image"
               id="image"
               class="form__input blog__image"
               required
-            />
+            /> -->
           </div>
           <div class="form__group">
             <label for="title" class="form__label">Title</label>

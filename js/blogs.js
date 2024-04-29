@@ -1,12 +1,15 @@
-import { createTemplateBlogs } from './utils.js';
+import { createTemplateBlogs, renderSpinner } from './utils.js';
 
 const blogsEl = document.querySelector('.blogs');
 
 const fetchBlogs = async function () {
   try {
-    const res = await fetch(`http://localhost:8000/blogs`);
+    //? render a spinner
+    renderSpinner(blogsEl);
+
+    const res = await fetch(`http://localhost:8000/api/blogs`);
+
     const data = await res.json();
-    // console.log(data);
 
     const { data: blogs } = data;
 

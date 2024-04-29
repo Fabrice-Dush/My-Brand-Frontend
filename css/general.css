@@ -304,17 +304,25 @@ section.down {
   justify-content: center;
 }
 
-.success {
+.success,
+.error-container {
   line-height: 1.4;
-  background-color: var(--color-green);
   padding: 1.4rem 3rem;
   width: 90%;
   position: absolute;
   left: 50%;
-  bottom: 10%;
+  bottom: 6%;
   transform: translateX(-50%);
   border-radius: 0.6rem;
   font-size: 2rem;
+}
+
+.success {
+  background-color: var(--color-green);
+}
+
+.error-container {
+  background-color: var(--color-pink);
 }
 
 .section-blog-new,
@@ -328,4 +336,27 @@ section.down {
 
 .btn--delete {
   background-color: var(--color-pink);
+}
+
+.spinner {
+  margin: 0 auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 4px solid;
+  border-left-color: var(--color-green);
+  border-top-color: var(--color-green);
+  border-bottom-color: var(--color-pink);
+  border-right-color: var(--color-pink);
+  animation: rotate 0.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

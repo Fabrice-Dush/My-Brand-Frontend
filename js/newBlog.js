@@ -1,3 +1,7 @@
+import { renderSpinner } from './utils.js';
+
+const successEl = document.querySelector('.success');
+const errorEl = document.querySelector('.error-container');
 const form = document.querySelector('.form__new-blog');
 
 form.addEventListener('submit', async function (event) {
@@ -7,27 +11,39 @@ form.addEventListener('submit', async function (event) {
     const token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
 
-    const image = form.image.value;
-    const title = form.title.value;
-    const description = form.description.value;
-    const longDescription = form.longDescription.value;
+    const image = this.image.files[0];
+    const title = this.title.value;
+    const description = this.description.value;
+    const longDescription = this.longDescription.value;
 
-    const url = this.getAttribute('action').slice(1);
-    const res = await fetch(url, {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('longDescription', longDescription);
+    formData.append('image', image);
+
+    //? render spinner
+    renderSpinner(this);
+
+    const res = await fetch(`http://localhost:8000/api/blogs`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', token },
-      body: JSON.stringify({
-        image,
-        title,
-        description,
-        longDescription,
-      }),
+      headers: { token },
+      body: formData,
     });
+
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
-    console.log(data);
-    location.assign('blogs.html');
+
+    successEl.classList.remove('hidden');
+    successEl.textContent = 'Successfully created a new blog post 😎😎😎';
+
+    setTimeout(() => {
+      location.assign('blogs.html');
+    }, 1500);
   } catch (err) {
     console.error('Error creating new blog: ', err);
+    errorEl.classList.remove('hidden');
+    errorEl.textContent =
+      'There is an error creating a new blog. Try again later :)';
   }
 });

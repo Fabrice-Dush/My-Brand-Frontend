@@ -21,7 +21,6 @@ blogEl.addEventListener('submit', async function (event) {
     if (!res.ok) throw new Error(data.errors);
 
     const { data: blog } = data;
-    console.log(blog);
     createTemplateLike(blog);
   } catch (err) {
     console.error('Error liking: ', err);

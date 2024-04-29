@@ -1,4 +1,4 @@
-import { createTemplateBlog } from './utils.js';
+import { createTemplateBlog, renderSpinner } from './utils.js';
 
 //? DOM elements
 const observedEl = document.querySelector('.observed');
@@ -6,6 +6,9 @@ const blogEl = document.querySelector('.blog-container');
 
 const fetchBlog = async function () {
   try {
+    //? render spinner
+    renderSpinner(blogEl);
+
     const href = localStorage.getItem('href');
     const res = await fetch(href);
     const data = await res.json();

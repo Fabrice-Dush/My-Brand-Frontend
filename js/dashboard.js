@@ -9,6 +9,11 @@ const messagesSideContainer = document.querySelector(
   '.aside__container-messages'
 );
 
+const messagesEl = document.querySelector('.messages');
+const asideContainerMessages = document.querySelector(
+  '.aside__container-messages'
+);
+
 const removeClass = function () {
   mainContainerEls.forEach((el, i) => {
     const asideContainer = asideContainers[i];
@@ -18,6 +23,33 @@ const removeClass = function () {
 };
 removeClass();
 
+const init = async function () {
+  try {
+    const token = localStorage.getItem('jwt');
+    if (!token) return location.assign('login.html');
+
+    const res = await fetch('http://localhost:8000/api/contact', {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', token },
+    });
+
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.errors);
+    const { data: messages } = data;
+
+    messagesContainer.innerHTML = '';
+    messages.forEach(message => {
+      const html = generateContentMessages(message);
+      messagesContainer.insertAdjacentHTML('beforeend', html);
+    });
+
+    messagesEl.classList.remove('hidden');
+    asideContainerMessages.classList.add('active');
+  } catch (err) {
+    console.log('Error: ', err);
+  }
+};
+
 const generateContentUsers = function (user) {
   const html = ` 
       <tr>
@@ -26,7 +58,7 @@ const generateContentUsers = function (user) {
         <td>${user.email}</td>
         <td>
           <a
-            href="http://localhost:8000/users/${user._id}"
+            href="http://localhost:8000/api/users/${user._id}"
             class="btn btn--small btn--delete delete__user"
             >Delete</a
           >
@@ -43,7 +75,7 @@ const generateContentBlogs = function (blog, idx) {
           <td>${blog.title}</td>
           <td>
             <a
-              href="http://localhost:8000/blogs/${blog.slug}"
+              href="http://localhost:8000/api/blogs/${blog.slug}"
               class="btn btn--small btn--delete delete__blog"
               >Delete</a
             >
@@ -61,7 +93,7 @@ const generateContentMessages = function (message) {
           <td>${message.subject}</td>
           <td>
             <a
-              href="http://localhost:8000/contact/${message._id}"
+              href="http://localhost:8000/api/contact/${message._id}"
               class="btn btn--small btn--delete delete__message"
               >Delete</a
             >
@@ -78,7 +110,7 @@ const generateContentSubscribers = function (subscriber, idx) {
         <td>${subscriber.email}</td>
         <td>
           <a
-            href="http://localhost:8000/subscribe/${subscriber._id}"
+            href="http://localhost:8000/api/subscribe/${subscriber._id}"
             class="btn btn--small btn--delete delete__subscriber"
             >Delete</a
           >
@@ -295,16 +327,11 @@ blogsContainer.addEventListener('click', async function (event) {
   }
 });
 
-messagesContainer.addEventListener('click', async function (event) {
+const displayMessages = async function (url) {
   try {
-    event.preventDefault();
     let token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
-    const el = event.target.closest('.delete__message');
-    if (!el) return;
-    console.log();
-    const url = el.getAttribute('href');
-    console.log(url);
+
     const res = await fetch(url, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json', token },
@@ -318,6 +345,18 @@ messagesContainer.addEventListener('click', async function (event) {
       const html = generateContentMessages(message);
       messagesContainer.insertAdjacentHTML('beforeend', html);
     });
+  } catch (err) {
+    throw err;
+  }
+};
+
+messagesContainer.addEventListener('click', async function (event) {
+  try {
+    event.preventDefault();
+    const el = event.target.closest('.delete__message');
+    if (!el) return;
+    const url = el.getAttribute('href');
+    displayMessages(url);
   } catch (err) {
     console.error('Error: ', err);
   }
@@ -348,3 +387,5 @@ subscribersContainer.addEventListener('click', async function (event) {
     console.error('Error: ', err);
   }
 });
+
+init();
