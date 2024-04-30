@@ -88,4 +88,4 @@ const observedElObserver = new IntersectionObserver(
   observedElObserverCallback,
   observedElObserverOptions
 );
-observedElObserver.observe(observedEl);
+// observedElObserver.observe(observedEl);

@@ -61,7 +61,9 @@ const generateContentUsers = function (user) {
         <td>${user.email}</td>
         <td>
           <a
-            href="http://localhost:8000/api/users/${user._id}"
+            href="https://my-brand-backend-n8rt.onrender.com/api/users/${
+              user._id
+            }"
             class="btn btn--small btn--delete delete__user"
             >Delete</a
           >
@@ -78,7 +80,9 @@ const generateContentBlogs = function (blog, idx) {
           <td>${blog.title}</td>
           <td>
             <a
-              href="http://localhost:8000/api/blogs/${blog.slug}"
+              href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
+                blog.slug
+              }"
               class="btn btn--small btn--delete delete__blog"
               >Delete</a
             >
@@ -96,7 +100,9 @@ const generateContentMessages = function (message) {
           <td>${message.subject}</td>
           <td>
             <a
-              href="http://localhost:8000/api/contact/${message._id}"
+              href="https://my-brand-backend-n8rt.onrender.com/api/contact/${
+                message._id
+              }"
               class="btn btn--small btn--delete delete__message"
               >Delete</a
             >
@@ -113,7 +119,9 @@ const generateContentSubscribers = function (subscriber, idx) {
         <td>${subscriber.email}</td>
         <td>
           <a
-            href="http://localhost:8000/api/subscribe/${subscriber._id}"
+            href="https://my-brand-backend-n8rt.onrender.com/api/subscribe/${
+              subscriber._id
+            }"
             class="btn btn--small btn--delete delete__subscriber"
             >Delete</a
           >
@@ -304,13 +312,11 @@ usersContainer.addEventListener('click', async function (event) {
 blogsContainer.addEventListener('click', async function (event) {
   try {
     event.preventDefault();
-    console.log();
     const token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
     const el = event.target.closest('.delete__blog');
     if (!el) return;
     const url = el.getAttribute('href');
-    console.log(url);
 
     const res = await fetch(url, {
       method: 'DELETE',

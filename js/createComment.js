@@ -2,7 +2,7 @@ import { createTemplateComments } from './utils.js';
 
 setTimeout(function () {
   const commentForm = document.querySelector('.form__comment');
-  commentForm.addEventListener('submit', async function (event) {
+  commentForm?.addEventListener('submit', async function (event) {
     try {
       event.preventDefault();
       const url = this.getAttribute('action');
@@ -27,4 +27,4 @@ setTimeout(function () {
       console.error('Error commenting: ', err);
     }
   });
-}, 1000);
+}, 3000);

@@ -1,7 +1,7 @@
 import { createTemplateComments } from './utils.js';
-const blogEl = document.querySelector('.blog');
 
 setTimeout(() => {
+  const blogEl = document.querySelector('.blog');
   const commentContainer = document.querySelector('.comments');
   commentContainer?.addEventListener('click', async function (event) {
     try {
@@ -11,7 +11,7 @@ setTimeout(() => {
       const el = event.target.closest('.btn--delete-comment');
       if (!el) return;
       const url = el.getAttribute('href');
-
+      console.log(url);
       const res = await fetch(url, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json', token },
@@ -26,4 +26,4 @@ setTimeout(() => {
       console.error('Error deleting a comment: ', err);
     }
   });
-}, 1000);
+}, 2500);

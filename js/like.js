@@ -2,7 +2,7 @@ import { createTemplateLike } from './utils.js';
 
 const blogEl = document.querySelector('.blog-container');
 
-blogEl.addEventListener('submit', async function (event) {
+blogEl?.addEventListener('submit', async function (event) {
   try {
     event.preventDefault();
 
@@ -13,6 +13,7 @@ blogEl.addEventListener('submit', async function (event) {
     if (!el) return;
 
     const url = el.getAttribute('action');
+    console.log(url);
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', token },

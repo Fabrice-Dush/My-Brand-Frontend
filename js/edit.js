@@ -1,7 +1,6 @@
 import { renderSpinner } from './utils.js';
 
 const formContainer = document.querySelector('.form-container');
-console.log(formContainer);
 
 const createTemplateForm = function () {
   const blog = JSON.parse(localStorage.getItem('blog'));
@@ -73,6 +72,7 @@ console.log(editForm.getAttribute('action'));
 editForm?.addEventListener('submit', async function (event) {
   try {
     event.preventDefault();
+
     const url = this.getAttribute('action');
     if (!url) return location.assign('blogs.html');
     const token = localStorage.getItem('jwt');

@@ -1,5 +1,6 @@
 setTimeout(() => {
   const btnModify = document.querySelector('.btn--modify');
+  console.log(btnModify);
 
   btnModify?.addEventListener('click', async function (event) {
     try {
@@ -20,4 +21,4 @@ setTimeout(() => {
       console.error('Error trying to edit a blog: ', err);
     }
   });
-}, 1000);
+}, 2500);

@@ -120,7 +120,7 @@ export const createTemplateBlog = function (blog) {
        ${blog.longDescription}
       </p>
       <div class="like-container">
-        <form action=""https://my-brand-backend-n8rt.onrender.com/api/blogs/${
+        <form action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
           blog.slug
         }/likes" method="POST" class="form__like">
           <button class="btn-like like">

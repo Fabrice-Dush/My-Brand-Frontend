@@ -14,6 +14,7 @@ const fetchBlogs = async function () {
     const data = await res.json();
 
     const { data: blogs } = data;
+    console.log();
 
     blogsEl.innerHTML = '';
     blogs.forEach(blog => {
