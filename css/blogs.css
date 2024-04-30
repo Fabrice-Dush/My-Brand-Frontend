@@ -75,11 +75,8 @@
 .blog__tag {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  /* color: var(--color-green); */
   color: #fff;
   font-weight: 600;
-  /* background-color: #d4d8dd;
-  background-color: var(--color-pink); */
   background-color: var(--color-green);
   font-size: 1.2rem;
   border-radius: 10rem;
