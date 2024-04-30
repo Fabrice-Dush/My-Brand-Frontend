@@ -1,3 +1,5 @@
+import { renderSpinner } from './utils.js';
+
 const aside = document.querySelector('.aside');
 const usersContainer = document.querySelector('.tbody__users');
 const blogsContainer = document.querySelector('.tbody__blogs');
@@ -151,6 +153,9 @@ aside.addEventListener('click', async function (event) {
       .querySelector(`.main__container--${id}`)
       .classList.remove('hidden');
 
+    //? render spinner
+    renderSpinner(usersContainer);
+
     const res = await fetch(url, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', token },
@@ -191,6 +196,9 @@ aside.addEventListener('click', async function (event) {
       .querySelector(`.main__container--${id}`)
       .classList.remove('hidden');
 
+    //? render spinner
+    renderSpinner(blogsContainer);
+
     const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
@@ -225,6 +233,9 @@ aside.addEventListener('click', async function (event) {
       .querySelector(`.main__container--${id}`)
       .classList.remove('hidden');
 
+    //? render spinner
+    renderSpinner(messagesContainer);
+
     const res = await fetch(url, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json', token },
@@ -233,11 +244,13 @@ aside.addEventListener('click', async function (event) {
     if (!res.ok) throw new Error(data.errors);
     const { data: messages } = data;
 
-    messagesContainer.innerHTML = '';
-    messages.forEach(message => {
-      const html = generateContentMessages(message);
-      messagesContainer.insertAdjacentHTML('beforeend', html);
-    });
+    setTimeout(() => {
+      messagesContainer.innerHTML = '';
+      messages.forEach(message => {
+        const html = generateContentMessages(message);
+        messagesContainer.insertAdjacentHTML('beforeend', html);
+      });
+    }, 200);
   } catch (err) {
     console.error('Error messages: ', err);
   }
@@ -261,6 +274,9 @@ aside.addEventListener('click', async function (event) {
     document
       .querySelector(`.main__container--${id}`)
       .classList.remove('hidden');
+
+    //? render spinner
+    renderSpinner(subscribersContainer);
 
     const res = await fetch(url, {
       method: 'GET',
@@ -290,6 +306,7 @@ usersContainer.addEventListener('click', async function (event) {
     const el = event.target.closest('.delete__user');
     if (!el) return;
     const url = el.getAttribute('href');
+
     const res = await fetch(url, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json', token },
@@ -379,6 +396,10 @@ subscribersContainer.addEventListener('click', async function (event) {
     const el = event.target.closest('.delete__subscriber');
     if (!el) return;
     const url = el.getAttribute('href');
+
+    //? render spinner
+    renderSpinner(subscribersContainer);
+
     const res = await fetch(url, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json', token },
