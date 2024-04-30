@@ -9,8 +9,9 @@ const fetchBlog = async function () {
     //? render spinner
     renderSpinner(blogEl);
 
-    const href = localStorage.getItem('href');
-    const res = await fetch(href);
+    const url = localStorage.getItem('href');
+    console.log(url);
+    const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
     const { data: blog } = data;

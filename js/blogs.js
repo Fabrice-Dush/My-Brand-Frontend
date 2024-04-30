@@ -33,7 +33,6 @@ blogsEl.addEventListener('click', function (event) {
   if (!blogEl) return;
 
   const link = blogEl.querySelector('.blog__link').getAttribute('href');
-  console.log(link);
   localStorage.setItem('href', link);
   location.assign('blog.html');
 });
