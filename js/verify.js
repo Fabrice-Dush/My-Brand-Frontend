@@ -20,7 +20,7 @@ verifyForm.addEventListener('submit', async function (event) {
     if (!res.ok) throw new Error(data.errors);
 
     const { data: user } = data;
-    const page = user.role === 'admin' ? 'dashboard.html' : 'blogs.html';
+    const page = user.role === 'admin' ? 'admin/dashboard.html' : 'blogs.html';
     if (user.isVerified) {
       console.log(user.isVerified);
       successEl.classList.remove('hidden');

@@ -4,7 +4,7 @@ const changeHeader = function () {
   const signupBtn = document.querySelector('.signup');
   const navList = document.querySelector('.nav__list');
   const dashboardBtn = document.querySelector(
-    ".nav__link[href='dashboard.html']"
+    ".nav__link[href='admin/dashboard.html']"
   );
 
   const token = localStorage.getItem('jwt');
@@ -30,7 +30,7 @@ const changeHeader = function () {
   }
 
   if (user?.role === 'admin')
-    dashboardBtn.parentElement.classList.remove('hidden');
-  else dashboardBtn.parentElement.classList.add('hidden');
+    dashboardBtn?.parentElement.classList.remove('hidden');
+  else dashboardBtn?.parentElement.classList.add('hidden');
 };
 changeHeader();
