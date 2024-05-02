@@ -3,10 +3,11 @@ import { renderSpinner } from './utils.js';
 const formContainer = document.querySelector('.form-container');
 
 const createTemplateForm = function () {
+  //   action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}"
   const blog = JSON.parse(localStorage.getItem('blog'));
   const html = `
         <form
-          action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}"
+          action="http://localhost:8000/api/blogs/${blog.slug}"
           enctype="multipart/form-data" 
           class="form form__edit-blog"
         >
@@ -85,13 +86,13 @@ editForm?.addEventListener('submit', async function (event) {
 
     const res = await fetch(url, {
       method: 'PUT',
-      headers: { token },
+      headers: { authorization: `Bearer ${token}` },
       body: formData,
     });
     const data = await res.json();
-    localStorage.setItem('href', data.url);
-    location.assign('blog.html');
     if (!res.ok) throw new Error(data.errors);
+
+    location.href = `http://127.0.0.1:5500/blog.html#${data.url.slice(32)}`;
   } catch (err) {
     console.error('Error in editing blog: ', err);
   }

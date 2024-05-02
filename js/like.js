@@ -16,7 +16,10 @@ blogEl?.addEventListener('submit', async function (event) {
     console.log(url);
     const res = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', token },
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);

@@ -14,13 +14,17 @@ setTimeout(() => {
       console.log(url);
       const res = await fetch(url, {
         method: 'DELETE',
-        headers: { 'Content-Type': 'application/json', token },
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${token}`,
+        },
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.errors);
 
       //? Create html
       const { data: blog } = data;
+      console.log(data);
       createTemplateComments(blog);
     } catch (err) {
       console.error('Error deleting a comment: ', err);

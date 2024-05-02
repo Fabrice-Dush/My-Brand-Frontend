@@ -3,8 +3,18 @@ body {
 }
 
 .blog {
+  position: relative;
   width: 70%;
   margin: 10rem auto;
+}
+
+.blog-container .error-container {
+  left: 50%;
+  /* top: 0; */
+  /* transform: translateY(-100rem); */
+  bottom: 70% !important;
+  text-align: center;
+  font-size: 3.2rem;
 }
 
 .blog__img {

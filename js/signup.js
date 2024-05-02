@@ -77,7 +77,8 @@ signupForm.addEventListener('submit', async function (event) {
       passwordTestFinal
     ) {
       const res = await fetch(
-        ` https://my-brand-backend-n8rt.onrender.com/api/signup`,
+        // ` https://my-brand-backend-n8rt.onrender.com/api/signup`,
+        `http://localhost:8000/api/signup`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -97,7 +98,7 @@ signupForm.addEventListener('submit', async function (event) {
       successEl.textContent = 'Your account was successfully created';
 
       setTimeout(() => {
-        location.assign('blogs.html');
+        location.assign('verifyAccount.html');
       }, 1500);
 
       //? Clear input fields

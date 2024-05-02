@@ -10,10 +10,9 @@
     I'm here to help you as I'm able to design and build fully functional websites.
      You can contact me using the form provided on the site or you can call me directly on my phone number."
     />
-
     <link rel="icon" href="img/icon.png" />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/verify.css" />
     <link rel="stylesheet" href="css/media.css" />
     <script
       type="module"
@@ -26,9 +25,9 @@
       defer
     ></script>
     <script src="js/script.js" defer></script>
-    <script src="js/login.js" defer></script>
+    <script src="js/verify.js" defer></script>
     <script src="js/helpers.js" defer></script>
-    <title>Login &mdash; Personal Portfolio Website</title>
+    <title>Verify Account &mdash; Personal portfolio</title>
   </head>
   <body>
     <header class="header">
@@ -49,13 +48,7 @@
           <li><a href="blogs.html" class="nav__link">Blogs</a></li>
           <li><a href="contact.html" class="nav__link">Contact</a></li>
           <li><a href="dashboard.html" class="nav__link">Dashboard</a></li>
-          <li>
-            <a
-              href="login.html"
-              class="nav__link btn btn--small active-link login"
-              >Login</a
-            >
-          </li>
+          <li><a href="login.html" class="nav__link login">Login</a></li>
           <li>
             <a href="logout.html" class="nav__link logout">Logout</a>
           </li>
@@ -66,59 +59,36 @@
         <ion-icon name="close-outline" class="menu__btn-icon"></ion-icon>
       </button>
     </header>
-    <section class="section-login">
-      <div class="container form-container">
-        <p class="form__title">Login to your account</p>
-        <form action="" class="form form__login">
-          <div class="form__group">
-            <label for="email" class="form__label">Email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              class="form__input form__email"
-              placeholder="name@email.com"
-              required
-            />
-          </div>
-          <div class="form__group form__show">
-            <label for="password" class="form__label">Password</label>
-            <div class="form__input-container">
+    <section class="section-verify">
+      <div class="container">
+        <div class="center">
+          <h1 class="section-verify__title">Verify Your Account</h1>
+          <form class="form form--verify" id="verify-form">
+            <div class="form__group">
+              <label for="otp" class="form__label">
+                Enter verification code sent to you
+              </label>
               <input
-                type="password"
-                name="password"
-                id="password"
-                class="form__input form__password"
-                placeholder="***************"
+                type="text"
+                name="otp"
+                id="otp"
+                class="form__input"
                 required
               />
-              <div class="show-container visible">
-                <ion-icon name="moon-outline"></ion-icon>
-                <ion-icon name="sunny-outline"></ion-icon>
-              </div>
             </div>
-            <a href="#" class="form__forgot">Forgot password?</a>
-          </div>
-          <button class="btn btn--big btn--full btn--login">Login</button>
-          <p class="form__account">
-            Don't have an account?
-            <a href="signup.html" class="form__link">Signup here</a>
-          </p>
-          <p class="success hidden"></p>
-          <p class="error-container hidden"></p>
-        </form>
+            <button class="btn btn--big btn--full">Verify</button>
+            <p class="success hidden"></p>
+            <p class="error-container hidden"></p>
+          </form>
+        </div>
       </div>
     </section>
+
     <footer class="footer">
       <p class="footer__text">
-        <span
-          >Designed by
-          <span class="footer__highlight">Dushimimana Fabrice</span></span
-        >
-        <span
-          >| Copyright &copy; <span class="footer__highlight year">2024</span>.
-          All Rights reserved.</span
-        >
+        Designed by <span class="footer__highlight">Dushimimana Fabrice</span> |
+        Copyright &copy; <span class="footer__highlight year">2024</span>. All
+        Rights reserved.
       </p>
     </footer>
   </body>

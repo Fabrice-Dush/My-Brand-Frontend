@@ -1,7 +1,6 @@
 import { createTemplateBlog, renderSpinner } from './utils.js';
 
 //? DOM elements
-const observedEl = document.querySelector('.observed');
 const blogEl = document.querySelector('.blog-container');
 
 const fetchBlog = async function () {
@@ -9,16 +8,19 @@ const fetchBlog = async function () {
     //? render spinner
     renderSpinner(blogEl);
 
-    const url = localStorage.getItem('href');
-    console.log(url);
-    const res = await fetch(url);
+    const slug = location.hash.slice(1);
+    const res = await fetch(`http://localhost:8000/api/blogs/${slug}`);
     const data = await res.json();
-    if (!res.ok) throw new Error(data.errors);
+    if (!res.ok) throw new Error(data.errors.message);
     const { data: blog } = data;
     const html = createTemplateBlog(blog);
     blogEl.insertAdjacentHTML('afterbegin', html);
   } catch (err) {
-    console.error('Error getting blog: ', err.stack);
+    blogEl.innerHTML = '';
+    const html = `
+      <div class="error-container">⛔ ${err.message}</div>
+    `;
+    blogEl.insertAdjacentHTML('beforeend', html);
   }
 };
 fetchBlog();

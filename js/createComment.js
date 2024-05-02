@@ -11,7 +11,10 @@ setTimeout(function () {
       const comment = this.comment.value;
       const res = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', token },
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({ comment }),
       });
       const data = await res.json();

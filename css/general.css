@@ -340,8 +340,8 @@ section.down {
 
 .spinner {
   margin: 5rem auto;
-  width: 4rem;
-  height: 4rem;
+  width: 5.5rem;
+  height: 5.5rem;
   border-radius: 50%;
   border: 4px solid;
   border-left-color: var(--color-green);

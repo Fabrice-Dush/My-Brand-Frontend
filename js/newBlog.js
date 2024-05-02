@@ -26,10 +26,11 @@ form.addEventListener('submit', async function (event) {
     renderSpinner(this);
 
     const res = await fetch(
-      `https://my-brand-backend-n8rt.onrender.com/api/blogs`,
+      // `https://my-brand-backend-n8rt.onrender.com/api/blogs`,
+      `http://localhost:8000/api/blogs`,
       {
         method: 'POST',
-        headers: { token },
+        headers: { authorization: `Bearer ${token}` },
         body: formData,
       }
     );

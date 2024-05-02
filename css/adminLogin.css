@@ -1,6 +1,4 @@
 .section-login {
-  padding: 4.8rem 0;
-  background-color: #e6f2fe;
   min-height: 100vh;
 }
 
@@ -15,16 +13,11 @@
 .form {
   position: relative;
   width: 45%;
-  background: linear-gradient(
-    to right bottom,
-    var(--color-green),
-    var(--color-primary),
-    var(--color-pink)
-  );
 
   display: inline-block;
   border-radius: 0.4rem;
   padding: 3.2rem 5rem;
+  box-shadow: 0 5rem 10rem 0 rgba(0, 0, 0, 0.1);
 }
 
 .form__new-blog,
@@ -57,8 +50,8 @@
   width: 100%;
   padding: 1.4rem 1.2rem;
   outline: none;
-  border: none;
-  border-radius: 0.4rem;
+  border: 1px solid #a7a7a7;
+  border-radius: 0.6rem;
   font-family: inherit;
   font-size: 1.8rem;
 }
@@ -68,18 +61,19 @@
 }
 
 .btn--full {
-  background-color: var(--color-green);
+  background-color: var(--color-primary);
   margin-bottom: 1.6rem;
 }
 
 .form__title {
   font-size: 4rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .form__account {
   font-size: 1.8rem;
+  display: none;
 }
 
 .form__link:link,
@@ -87,7 +81,7 @@
   text-decoration: none;
   font-family: inherit;
   font-weight: 700;
-  color: var(--color-green);
+  color: var(--color-primary);
 }
 
 .form__show {
@@ -99,7 +93,7 @@
   position: relative;
 }
 
-.move .show-container {
+move .show-container {
   top: 25%;
 }
 

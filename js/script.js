@@ -7,11 +7,11 @@ const menuBtn = document.querySelector('.menu__btn');
 const yearEl = document.querySelector('.year');
 
 //? Globals
-const namePattern = /(^[a-z\s]{10,}$)/gi;
-const subjectPattern = /(^[a-z\W\s]{10,})/gi;
-const messagePattern = /(^[a-z\W\s]{20,})/gi;
-const emailPattern = /(^[a-z]{3,})([a-z0-9]*)@([a-z]{3,8})\.([a-z]{2,5}$)/g;
-const passwordPattern = /([A-Z]+)([a-z]+)([0-9]+)([@#$&?]+)/g;
+const namePattern = /(^[a-z\s]{5,}$)/gi;
+const subjectPattern = /(^[a-z\W\s]{5,})/gi;
+const messagePattern = /(^[a-z\W\s]{10,})/gi;
+const emailPattern = /(^[a-z.]{3,})([a-z0-9]*)@([a-z]{3,8})\.([a-z]{2,5}$)/g;
+const passwordPattern = /([A-Z]+)([a-z]+)([@#$&?]+)([0-9]+)/g;
 let loginData = [];
 let signupData = [];
 let contactData = [];

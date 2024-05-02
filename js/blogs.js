@@ -1,5 +1,8 @@
 import { createTemplateBlogs, renderSpinner } from './utils.js';
 
+//? DOM Elements
+const btnNewBlog = document.querySelector('.blogs__new');
+
 const blogsEl = document.querySelector('.blogs');
 
 const fetchBlogs = async function () {
@@ -8,7 +11,8 @@ const fetchBlogs = async function () {
     renderSpinner(blogsEl);
 
     const res = await fetch(
-      `https://my-brand-backend-n8rt.onrender.com/api/blogs`
+      // `https://my-brand-backend-n8rt.onrender.com/api/blogs`
+      `http://localhost:8000/api/blogs`
     );
 
     const data = await res.json();
@@ -33,6 +37,14 @@ blogsEl.addEventListener('click', function (event) {
   if (!blogEl) return;
 
   const link = blogEl.querySelector('.blog__link').getAttribute('href');
-  localStorage.setItem('href', link);
-  location.assign('blog.html');
+  location.href = `http://127.0.0.1:5500/blog.html#${link.slice(32)}`;
+});
+
+console.log(btnNewBlog);
+btnNewBlog?.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  const token = localStorage.getItem('jwt');
+  if (!token) return location.assign('login.html');
+  location.assign('newBlog.html');
 });

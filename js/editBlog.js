@@ -1,6 +1,5 @@
 setTimeout(() => {
   const btnModify = document.querySelector('.btn--modify');
-  console.log(btnModify);
 
   btnModify?.addEventListener('click', async function (event) {
     try {
