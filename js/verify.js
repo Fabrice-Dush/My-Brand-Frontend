@@ -1,3 +1,5 @@
+'use strict';
+
 //? DOM Elements
 const verifyForm = document.querySelector('.form--verify');
 const successEl = document.querySelector('.success');
