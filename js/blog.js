@@ -9,7 +9,9 @@ const fetchBlog = async function () {
     renderSpinner(blogEl);
 
     const slug = location.hash.slice(1);
-    const res = await fetch(`http://localhost:8000/api/blogs/${slug}`);
+    const res = await fetch(
+      `https://my-brand-backend-n8rt.onrender.com/api/blogs/${slug}`
+    );
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors.message);
     const { data: blog } = data;

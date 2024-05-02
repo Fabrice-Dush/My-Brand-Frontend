@@ -3,11 +3,10 @@ import { renderSpinner } from './utils.js';
 const formContainer = document.querySelector('.form-container');
 
 const createTemplateForm = function () {
-  //   action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}"
   const blog = JSON.parse(localStorage.getItem('blog'));
   const html = `
         <form
-          action="http://localhost:8000/api/blogs/${blog.slug}"
+          action="https://my-brand-backend-n8rt.onrender.com/api/blogs/${blog.slug}"
           enctype="multipart/form-data" 
           class="form form__edit-blog"
         >

@@ -77,8 +77,7 @@ signupForm.addEventListener('submit', async function (event) {
       passwordTestFinal
     ) {
       const res = await fetch(
-        // ` https://my-brand-backend-n8rt.onrender.com/api/signup`,
-        `http://localhost:8000/api/signup`,
+        ` https://my-brand-backend-n8rt.onrender.com/api/signup`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
