@@ -36,7 +36,9 @@ blogsEl.addEventListener('click', function (event) {
   if (!blogEl) return;
 
   const link = blogEl.querySelector('.blog__link').getAttribute('href');
-  location.href = `http://127.0.0.1:5500/blog.html#${link.slice(32)}`;
+  location.href = `https://fabrice-dush.github.io/My-Brand-Frontend/blog.html#${link.slice(
+    53
+  )}`;
 });
 
 console.log(btnNewBlog);
