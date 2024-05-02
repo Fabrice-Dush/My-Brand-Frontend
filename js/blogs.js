@@ -11,8 +11,7 @@ const fetchBlogs = async function () {
     renderSpinner(blogsEl);
 
     const res = await fetch(
-      // `https://my-brand-backend-n8rt.onrender.com/api/blogs`
-      `http://localhost:8000/api/blogs`
+      `https://my-brand-backend-n8rt.onrender.com/api/blogs`
     );
 
     const data = await res.json();

@@ -46,8 +46,7 @@ loginForm.addEventListener('submit', async function (event) {
 
     // if (emailTest && passwordTest && passwordTest2) {
     const res = await fetch(
-      //` https://my-brand-backend-n8rt.onrender.com/api/login`,
-      `http://localhost:8000/api/login`,
+      ` https://my-brand-backend-n8rt.onrender.com/api/login`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
