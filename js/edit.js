@@ -1,7 +1,6 @@
 import { renderSpinner } from './utils.js';
 
 const formContainer = document.querySelector('.form-container');
-
 const createTemplateForm = function () {
   const blog = JSON.parse(localStorage.getItem('blog'));
   const html = `
