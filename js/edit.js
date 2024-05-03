@@ -91,9 +91,7 @@ editForm?.addEventListener('submit', async function (event) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
 
-    location.href = `https://fabrice-dush.github.io/My-Brand-Frontend/blog.html#${data.url.slice(
-      53
-    )}`;
+    location.href = `https://fabrice-dush.github.io/My-Brand-Frontend/blog.html#${data.slug}`;
   } catch (err) {
     console.error('Error in editing blog: ', err);
   }
