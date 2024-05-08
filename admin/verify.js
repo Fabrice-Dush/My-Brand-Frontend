@@ -2,7 +2,6 @@
 
 //? DOM Elements
 const btnverify = document.querySelector('.btn--verify');
-console.log(btnverify);
 const verifyForm = document.querySelector('.form--verify');
 const successEl = document.querySelector('.success');
 const errorEl = document.querySelector('.error-container');
@@ -20,7 +19,6 @@ verifyForm.addEventListener('submit', async function (event) {
 
     //? Get values
     const otp = this.otp.value;
-    console.log(otp);
 
     const res = await fetch(
       'https://my-brand-backend-n8rt.onrender.com/api/verify',
@@ -33,8 +31,6 @@ verifyForm.addEventListener('submit', async function (event) {
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
 
-    this.querySelector('.spinnerLogin').remove();
-
     const { data: user } = data;
     const page = user.role === 'admin' ? 'admin/dashboard.html' : 'blogs.html';
     const goToPage = localStorage.getItem('comingfrom');
@@ -43,6 +39,8 @@ verifyForm.addEventListener('submit', async function (event) {
       successEl.classList.remove('hidden');
       successEl.textContent = 'Your account is now verified';
     }
+
+    this.querySelector('.spinnerLogin').remove();
 
     setTimeout(() => {
       successEl.classList.add('hidden');

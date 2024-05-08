@@ -17,7 +17,6 @@ const fetchBlogs = async function () {
     const data = await res.json();
 
     const { data: blogs } = data;
-    console.log();
 
     blogsEl.innerHTML = '';
     blogs.forEach(blog => {
@@ -41,7 +40,6 @@ blogsEl.addEventListener('click', function (event) {
   )}`;
 });
 
-console.log(btnNewBlog);
 btnNewBlog?.addEventListener('click', function (event) {
   event.preventDefault();
 
