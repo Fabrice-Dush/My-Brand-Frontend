@@ -99,7 +99,9 @@
             </div>
             <a href="#" class="form__forgot">Forgot password?</a>
           </div>
-          <button class="btn btn--big btn--full btn--login">Login</button>
+          <button class="btn btn--big btn--full btn--login">
+            <span>Login</span>
+          </button>
           <p class="form__account">
             Don't have an account?
             <a href="signup.html" class="form__link">Signup here</a>
@@ -123,3 +125,33 @@
     </footer>
   </body>
 </html>
+
+<!--
+    //? 3. Validate email
+    // const emailTest = email.match(emailPattern);
+    // if (!emailTest) {
+    //   printError(
+    //     loginFormEmail.parentElement,
+    //     'Please provide a valid email address'
+    //   );
+    // } else removeEl(loginFormEmail.parentElement);
+
+    // //? 4. Validate password
+    // const passwordTest = password.length >= 6;
+    // if (!passwordTest) {
+    //   printError(
+    //     loginFormPassword.parentElement,
+    //     'Password must be at least 6 characters long'
+    //   );
+    // } else removeEl(loginFormPassword.parentElement);
+
+    // const passwordTest2 = password.match(passwordPattern);
+    // if (!passwordTest2) {
+    //   printError(
+    //     loginFormPassword.parentElement,
+    //     `Password must include at least one lowercase letter,\nuppercase letter, special character and number`
+    //   );
+    // } else removeEl(loginFormPassword.parentElement);
+
+    // if (emailTest && passwordTest && passwordTest2) {
+      -->
