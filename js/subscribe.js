@@ -1,6 +1,12 @@
 'use strict';
 
-import { animateSection, emailPattern } from './script.js';
+import {
+  animateSection,
+  emailPattern,
+  removeEl,
+  printError,
+  printMessage,
+} from './script.js';
 
 const sectionBlogs = document.querySelector('.section__blogs');
 const subscriptionEl = document.querySelector('.subscription');
