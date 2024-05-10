@@ -16,9 +16,7 @@ loginForm.addEventListener('submit', async function (event) {
   try {
     loginBtn.insertAdjacentHTML(
       'beforeend',
-      `
-  <div class="spinnerLogin"></div>
-  `
+      `<div class="spinnerLogin"></div>`
     );
     //? 1. prevent page from reloading
     event.preventDefault();

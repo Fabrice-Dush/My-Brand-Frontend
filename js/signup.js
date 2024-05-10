@@ -11,7 +11,6 @@ import {
 
 const btnSignup = document.querySelector('.btn--signup');
 const signupForm = document.querySelector('.form__signup');
-console.log(signupForm);
 const signupFormEmail = document.querySelector('.form__signup .form__email');
 const signupFormFullname = document.querySelector(
   '.form__signup .form__fullname'
