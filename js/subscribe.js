@@ -1,6 +1,6 @@
 'use strict';
 
-import { animateSection } from './script.js';
+import { animateSection, emailPattern } from './script.js';
 
 const sectionBlogs = document.querySelector('.section__blogs');
 const subscriptionEl = document.querySelector('.subscription');
@@ -64,6 +64,7 @@ subscribeForm.addEventListener('submit', async function (event) {
       printMessage('Hang in there! You already subscribed...', 'correct');
     }
   } catch (err) {
+    console.log(err);
     errorEl.classList.remove('hidden');
     errorEl.textContent = 'You already subscribed';
     setTimeout(() => {
