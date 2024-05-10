@@ -1,4 +1,6 @@
-"use strict";
+'use strict';
 
-const sectionSkills = document.querySelector(".section-skills");
+import { animateSection } from './script.js';
+
+const sectionSkills = document.querySelector('.section-skills');
 animateSection(sectionSkills);

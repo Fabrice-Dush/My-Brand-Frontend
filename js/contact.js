@@ -1,5 +1,15 @@
 'use strict';
 
+import {
+  animateSection,
+  namePattern,
+  emailPattern,
+  subjectPattern,
+  messagePattern,
+  removeEl,
+  printError,
+} from './script.js';
+
 //? DOM Elements
 const sectionContact = document.querySelector('.section-contact');
 const contactForm = document.querySelector('.form__contact');
@@ -14,6 +24,8 @@ const contactFormMessage = document.querySelector(
   '.form__contact .form__textarea'
 );
 
+const btnContact = document.querySelector('.btn--contact');
+
 const successEl = document.querySelector('.success');
 
 animateSection(sectionContact);
@@ -22,7 +34,6 @@ contactForm.addEventListener('submit', async function (event) {
   try {
     //? 0. preventing the page from reloading
     event.preventDefault();
-    console.log('Clicked');
 
     //? 1. Get input values
     const fullName = contactFormFullName.value;
@@ -67,7 +78,12 @@ contactForm.addEventListener('submit', async function (event) {
     } else removeEl(contactFormMessage.parentElement);
 
     if (messageTest && emailTest && fullNameTest && subjectTest) {
-      console.log('Inside');
+      //? Render spinner
+      btnContact.insertAdjacentHTML(
+        'beforeend',
+        `<div class="spinnerLogin"></div>`
+      );
+
       const url = this.getAttribute('action');
       const res = await fetch(url, {
         method: 'POST',
@@ -77,6 +93,9 @@ contactForm.addEventListener('submit', async function (event) {
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.errors);
+
+      //? hide the spinner
+      this.querySelector('.spinnerLogin').remove();
 
       //? display success message
       successEl.classList.remove('hidden');
@@ -92,6 +111,8 @@ contactForm.addEventListener('submit', async function (event) {
       contactFormMessage.value = '';
     }
   } catch (err) {
+    //? hide the spinner
+    this.querySelector('.spinnerLogin').remove();
     console.error('Error contacting: ', err);
   }
 });

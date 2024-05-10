@@ -25,9 +25,9 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
       defer
     ></script>
-    <script src="js/script.js" defer></script>
-    <script src="js/contact.js" defer></script>
-    <script src="js/helpers.js" defer></script>
+    <script src="js/script.js" type="module" defer></script>
+    <script src="js/contact.js" type="module" defer></script>
+    <script src="js/helpers.js" type="module" defer></script>
     <title>Contact page &mdash; Personal Portfolio Website</title>
   </head>
   <body>
@@ -124,8 +124,9 @@
           </div>
         </div>
         <div class="contact__form">
+          <!-- action="https://my-brand-backend-n8rt.onrender.com/api/contact" -->
           <form
-            action="https://my-brand-backend-n8rt.onrender.com/api/contact"
+            action="http://localhost:8000/api/contact"
             method="post"
             class="form form__contact"
           >
@@ -164,7 +165,9 @@
                 required
               ></textarea>
             </div>
-            <button class="btn btn--big btn--full">Send Message</button>
+            <button class="btn btn--big btn--full btn--contact">
+              <span>Send Message</span>
+            </button>
             <p class="success hidden"></p>
           </form>
         </div>

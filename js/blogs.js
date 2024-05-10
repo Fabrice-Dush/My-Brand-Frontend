@@ -1,4 +1,4 @@
-import { createTemplateBlogs, renderSpinner } from './utils.js';
+import { createTemplateBlogs, localUrl, renderSpinner, url } from './utils.js';
 
 //? DOM Elements
 const btnNewBlog = document.querySelector('.blogs__new');
@@ -10,9 +10,7 @@ const fetchBlogs = async function () {
     //? render a spinner
     renderSpinner(blogsEl);
 
-    const res = await fetch(
-      `https://my-brand-backend-n8rt.onrender.com/api/blogs`
-    );
+    const res = await fetch(`${url}api/blogs`);
 
     const data = await res.json();
 
@@ -34,10 +32,8 @@ blogsEl.addEventListener('click', function (event) {
   const blogEl = event.target.closest('.blog');
   if (!blogEl) return;
 
-  const link = blogEl.querySelector('.blog__link').getAttribute('href');
-  location.href = `https://fabrice-dush.github.io/My-Brand-Frontend/blog.html#${link.slice(
-    53
-  )}`;
+  const slug = blogEl.dataset.slug;
+  location.href = `https://fabrice-dush.github.io/My-Brand-Frontend/blog.html#${slug}`;
 });
 
 btnNewBlog?.addEventListener('click', function (event) {

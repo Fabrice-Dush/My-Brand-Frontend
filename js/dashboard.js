@@ -1,4 +1,4 @@
-import { renderSpinner } from './utils.js';
+import { localUrl, renderSpinner, url } from './utils.js';
 
 const aside = document.querySelector('.aside');
 const usersContainer = document.querySelector('.tbody__users');
@@ -30,16 +30,13 @@ const init = async function () {
     const token = localStorage.getItem('jwt');
     if (!token) return location.assign('login.html');
 
-    const res = await fetch(
-      'https://my-brand-backend-n8rt.onrender.com/api/contact',
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const res = await fetch(`${url}api/contact`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+    });
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
@@ -66,9 +63,7 @@ const generateContentUsers = function (user) {
         <td>${user.email}</td>
         <td>
           <a
-            href="https://my-brand-backend-n8rt.onrender.com/api/users/${
-              user._id
-            }"
+            href="${url}api/users/${user._id}"
             class="btn btn--small btn--delete delete__user"
             >Delete</a
           >
@@ -77,25 +72,6 @@ const generateContentUsers = function (user) {
           `;
   return html;
 };
-// const generateContentUsers = function (user) {
-//   const html = `
-//       <tr>
-//         <td>${user.fullname.split(' ').at(0)}</td>
-//         <td>${user.fullname.split(' ')[1]}</td>
-//         <td>${user.email}</td>
-//         <td>
-//           <a
-//             href="https://my-brand-backend-n8rt.onrender.com/api/users/${
-//               user._id
-//             }"
-//             class="btn btn--small btn--delete delete__user"
-//             >Delete</a
-//           >
-//         </td>
-//       </tr>
-//           `;
-//   return html;
-// };
 
 const generateContentBlogs = function (blog, idx) {
   const html = `
@@ -103,10 +79,17 @@ const generateContentBlogs = function (blog, idx) {
           <td>${idx + 1}</td>
           <td>${blog.title}</td>
           <td>
+            <a href="${url}api/blogs/${
+    blog.slug
+  }" class="btn btn--small approve${
+    blog.isAccepted ? ' approved' : ' pending'
+  }" data-isAccepted=${blog.isAccepted}>${
+    blog.isAccepted ? 'Approved' : 'Pending'
+  }</a>
+          </td>
+             <td>
             <a
-              href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
-                blog.slug
-              }"
+              href="${url}api/blogs/${blog.slug}"
               class="btn btn--small btn--delete delete__blog"
               >Delete</a
             >
@@ -115,24 +98,6 @@ const generateContentBlogs = function (blog, idx) {
       `;
   return html;
 };
-// const generateContentBlogs = function (blog, idx) {
-//   const html = `
-//         <tr>
-//           <td>${idx + 1}</td>
-//           <td>${blog.title}</td>
-//           <td>
-//             <a
-//               href="https://my-brand-backend-n8rt.onrender.com/api/blogs/${
-//                 blog.slug
-//               }"
-//               class="btn btn--small btn--delete delete__blog"
-//               >Delete</a
-//             >
-//           </td>
-//         </tr>
-//       `;
-//   return html;
-// };
 
 const generateContentMessages = function (message) {
   const html = `
@@ -142,9 +107,7 @@ const generateContentMessages = function (message) {
           <td>${message.subject}</td>
           <td>
             <a
-              href="https://my-brand-backend-n8rt.onrender.com/api/contact/${
-                message._id
-              }"
+              href="${url}api/contact/${message._id}"
               class="btn btn--small btn--delete delete__message"
               >Delete</a
             >
@@ -153,25 +116,6 @@ const generateContentMessages = function (message) {
       `;
   return html;
 };
-// const generateContentMessages = function (message) {
-//   const html = `
-//         <tr>
-//           <td>${message.fullname.split(' ').at(0)}</td>
-//           <td>${message.email}</td>
-//           <td>${message.subject}</td>
-//           <td>
-//             <a
-//               href="https://my-brand-backend-n8rt.onrender.com/api/contact/${
-//                 message._id
-//               }"
-//               class="btn btn--small btn--delete delete__message"
-//               >Delete</a
-//             >
-//           </td>
-//         </tr>
-//       `;
-//   return html;
-// };
 
 const generateContentSubscribers = function (subscriber, idx) {
   const html = `
@@ -180,9 +124,7 @@ const generateContentSubscribers = function (subscriber, idx) {
         <td>${subscriber.email}</td>
         <td>
           <a
-            href="https://my-brand-backend-n8rt.onrender.com/api/subscribe/${
-              subscriber._id
-            }"
+            href="${url}api/subscribe/${subscriber._id}"
             class="btn btn--small btn--delete delete__subscriber"
             >Delete</a
           >
@@ -192,25 +134,6 @@ const generateContentSubscribers = function (subscriber, idx) {
 
   return html;
 };
-// const generateContentSubscribers = function (subscriber, idx) {
-//   const html = `
-//       <tr>
-//         <td>${idx + 1}</td>
-//         <td>${subscriber.email}</td>
-//         <td>
-//           <a
-//             href="https://my-brand-backend-n8rt.onrender.com/api/subscribe/${
-//               subscriber._id
-//             }"
-//             class="btn btn--small btn--delete delete__subscriber"
-//             >Delete</a
-//           >
-//         </td>
-//       </tr>
-//     `;
-
-//   return html;
-// };
 
 aside.addEventListener('click', async function (event) {
   try {
@@ -283,7 +206,7 @@ aside.addEventListener('click', async function (event) {
 
     const res = await fetch(url, {
       method: 'GET',
-      headers: { authorization: `Bearer ${token}` },
+      headers: { authorization: `Bearer ${token}`, role: 'admin' },
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
@@ -450,6 +373,39 @@ blogsContainer.addEventListener('click', async function (event) {
   }
 });
 
+blogsContainer.addEventListener('click', async function (event) {
+  try {
+    event.preventDefault();
+    const token = localStorage.getItem('jwt');
+    if (!token) return location.assign('login.html');
+    const el = event.target.closest('.approve');
+    if (!el) return;
+    const url = el.getAttribute('href');
+
+    const isAccepted = el.dataset.isaccepted === 'true' ? true : false;
+
+    const res = await fetch(url, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ isAccepted: !isAccepted }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.errors);
+    const { data: blogs } = data;
+
+    blogsContainer.innerHTML = '';
+    blogs.forEach((blog, idx) => {
+      const html = generateContentBlogs(blog, idx);
+      blogsContainer.insertAdjacentHTML('beforeend', html);
+    });
+  } catch (err) {
+    console.error('Error: ', err);
+  }
+});
+
 const displayMessages = async function (url) {
   try {
     let token = localStorage.getItem('jwt');
@@ -520,5 +476,4 @@ subscribersContainer.addEventListener('click', async function (event) {
     console.error('Error: ', err);
   }
 });
-
 init();

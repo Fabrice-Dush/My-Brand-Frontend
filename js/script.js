@@ -7,14 +7,12 @@ const menuBtn = document.querySelector('.menu__btn');
 const yearEl = document.querySelector('.year');
 
 //? Globals
-const namePattern = /(^[a-z\s]{5,}$)/gi;
-const subjectPattern = /(^[a-z\W\s]{5,})/gi;
-const messagePattern = /(^[a-z\W\s]{10,})/gi;
-const emailPattern = /(^[a-z.]{3,})([a-z0-9]*)@([a-z]{3,8})\.([a-z]{2,5}$)/g;
-const passwordPattern = /([A-Z]+)([a-z]+)([@#$&?]+)([0-9]+)/g;
-let loginData = [];
-let signupData = [];
-let contactData = [];
+export const namePattern = /(^[a-z\s]{5,}$)/gi;
+export const subjectPattern = /(^[a-z\W\s]{5,})/gi;
+export const messagePattern = /(^[a-z\W\s]{10,})/gi;
+export const emailPattern =
+  /(^[a-z.]{3,})([a-z0-9]*)@([a-z]{3,8})\.([a-z]{2,5}$)/g;
+export const passwordPattern = /([A-Z]+)([a-z]+)([@#$&?]+)([0-9]+)/g;
 
 //? Functions
 const toggleClass = function () {
@@ -28,7 +26,7 @@ const calcYear = function () {
 };
 calcYear();
 
-const printError = function (el, value) {
+export const printError = function (el, value) {
   const html = `
     <div class="error">
     <ion-icon name="warning" class="error__icon"></ion-icon>
@@ -42,7 +40,7 @@ const printError = function (el, value) {
   return;
 };
 
-const printMessage = function (message, string) {
+export const printMessage = function (message, string) {
   const html = `
       <div class="message message__${string}">
         <p class="message__text">${message} ${
@@ -57,13 +55,13 @@ const printMessage = function (message, string) {
   }, 3000);
 };
 
-const removeEl = function (el) {
+export const removeEl = function (el) {
   el?.classList?.remove('move', 'mistake');
   el?.querySelector('.error')?.remove();
 };
 
 //? Animating  ection
-const animateSection = function (section) {
+export const animateSection = function (section) {
   const sectionObserver = new IntersectionObserver(
     function ([entry], observer) {
       if (entry.isIntersecting) {

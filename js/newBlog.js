@@ -1,4 +1,4 @@
-import { renderSpinner } from './utils.js';
+import { localUrl, renderSpinner } from './utils.js';
 
 const successEl = document.querySelector('.success');
 const errorEl = document.querySelector('.error-container');
@@ -25,14 +25,11 @@ form.addEventListener('submit', async function (event) {
     //? render spinner
     renderSpinner(this);
 
-    const res = await fetch(
-      `https://my-brand-backend-n8rt.onrender.com/api/blogs`,
-      {
-        method: 'POST',
-        headers: { authorization: `Bearer ${token}` },
-        body: formData,
-      }
-    );
+    const res = await fetch(`${url}api/blogs`, {
+      method: 'POST',
+      headers: { authorization: `Bearer ${token}` },
+      body: formData,
+    });
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);

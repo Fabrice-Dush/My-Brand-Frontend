@@ -1,4 +1,4 @@
-import { createTemplateBlog, renderSpinner } from './utils.js';
+import { createTemplateBlog, localUrl, renderSpinner, url } from './utils.js';
 
 //? DOM elements
 const blogEl = document.querySelector('.blog-container');
@@ -9,9 +9,7 @@ const fetchBlog = async function () {
     renderSpinner(blogEl);
 
     const slug = location.hash.slice(1);
-    const res = await fetch(
-      `https://my-brand-backend-n8rt.onrender.com/api/blogs/${slug}`
-    );
+    const res = await fetch(`${url}api/blogs/${slug}`);
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors.message);
     const { data: blog } = data;
