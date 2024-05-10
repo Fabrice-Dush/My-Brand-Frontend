@@ -1,5 +1,7 @@
 'use strict';
 
+import { localUrl, url } from './utils.js';
+
 const loginBtn = document.querySelector('.btn--login');
 const loginForm = document.querySelector('.form__login');
 const loginFormEmail = document.querySelector('.form__login .form__email');
@@ -24,14 +26,11 @@ loginForm.addEventListener('submit', async function (event) {
     //? 2. Get input values
     const email = loginFormEmail.value;
     const password = loginFormPassword.value;
-    const res = await fetch(
-      ` https://my-brand-backend-n8rt.onrender.com/api/login`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      }
-    );
+    const res = await fetch(` ${url}api/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);
 

@@ -1,6 +1,17 @@
 'use strict';
 
+import { localUrl, url } from './utils.js';
+import {
+  emailPattern,
+  namePattern,
+  passwordPattern,
+  printError,
+  removeEl,
+} from './script.js';
+
+const btnSignup = document.querySelector('.btn--signup');
 const signupForm = document.querySelector('.form__signup');
+console.log(signupForm);
 const signupFormEmail = document.querySelector('.form__signup .form__email');
 const signupFormFullname = document.querySelector(
   '.form__signup .form__fullname'
@@ -76,14 +87,17 @@ signupForm.addEventListener('submit', async function (event) {
       passwordTest2 &&
       passwordTestFinal
     ) {
-      const res = await fetch(
-        `https://my-brand-backend-n8rt.onrender.com/api/signup`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ fullName, email, password }),
-        }
+      //? Render spinner
+      btnSignup.insertAdjacentHTML(
+        'beforeend',
+        `<div class="spinnerLogin"></div>`
       );
+
+      const res = await fetch(`${url}api/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fullName, email, password }),
+      });
       const data = await res.json();
       if (!res.ok) throw new Error(data.errors.email);
 
@@ -91,6 +105,9 @@ signupForm.addEventListener('submit', async function (event) {
       const { data: user, token } = data;
       localStorage.setItem('jwt', token);
       localStorage.setItem('user', JSON.stringify(user));
+
+      //? hide spinner
+      this.querySelector('.spinnerLogin')?.remove();
 
       //? Print success message
       successEl.classList.remove('hidden');
@@ -106,6 +123,9 @@ signupForm.addEventListener('submit', async function (event) {
         .forEach(input => (input.value = ''));
     }
   } catch (err) {
+    //? hide spinner
+    this.querySelector('.spinnerLogin')?.remove();
+
     if (err.message.includes('Email already taken')) {
       return printError(signupFormEmail.parentElement, err.message);
     }

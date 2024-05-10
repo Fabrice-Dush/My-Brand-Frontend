@@ -1,5 +1,7 @@
 'use strict';
 
+import { localUrl, url } from './utils.js';
+
 //? DOM Elements
 const btnverify = document.querySelector('.btn--verify');
 console.log(btnverify);
@@ -22,13 +24,10 @@ verifyForm.addEventListener('submit', async function (event) {
     const otp = this.otp.value;
     console.log(otp);
 
-    const res = await fetch(
-      'https://my-brand-backend-n8rt.onrender.com/api/verify',
-      {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json', otp },
-      }
-    );
+    const res = await fetch(`${url}api/verify`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', otp },
+    });
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.errors);

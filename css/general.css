@@ -338,8 +338,10 @@ section.down {
   background-color: var(--color-pink);
 }
 
+.btn--signup,
 .btn--login,
-.btn--verify {
+.btn--verify,
+.btn--contact {
   display: flex;
   align-items: center;
   gap: 1.2rem;

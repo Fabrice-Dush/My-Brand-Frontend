@@ -1,5 +1,7 @@
 'use strict';
 
+import { animateSection } from './script.js';
+
 const sectionBlogs = document.querySelector('.section__blogs');
 const subscriptionEl = document.querySelector('.subscription');
 const btnSubscribe = document.querySelector('.subscribe__btn');

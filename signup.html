@@ -25,9 +25,9 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
       defer
     ></script>
-    <script src="js/script.js" defer></script>
-    <script src="js/signup.js" defer></script>
-    <script src="js/helpers.js" defer></script>
+    <script src="js/script.js" type="module" defer></script>
+    <script src="js/signup.js" type="module" defer></script>
+    <script src="js/helpers.js" type="module" defer></script>
     <title>Signup &mdash; Personal Portfolio Website</title>
   </head>
   <body>
@@ -71,7 +71,7 @@
     <section class="section-login">
       <div class="container form-container">
         <p class="form__title">Create your account here.</p>
-        <form action="" class="form form__signup">
+        <form method="post" class="form form__signup">
           <div class="form__group">
             <label for="fullname" class="form__label">FullName</label>
             <input
@@ -128,7 +128,9 @@
               </div>
             </div>
           </div>
-          <button class="btn btn--big btn--full btn--signup">Signup</button>
+          <button class="btn btn--big btn--full btn--signup">
+            <span>Signup</span>
+          </button>
           <p class="form__account">
             Already have an account?
             <a href="login.html" class="form__link">Sign in</a>
