@@ -8,7 +8,7 @@ const blogsEl = document.querySelector('.blogs');
 const fetchBlogs = async function () {
   try {
     //? render a spinner
-    renderSpinner(blogsEl);
+    //renderSpinner(blogsEl);
 
     const res = await fetch(`${url}api/blogs`);
 
