@@ -16,7 +16,7 @@ const fetchBlogs = async function () {
 
     const { data: blogs } = data;
 
-    blogsEl.innerHTML = '';
+    //blogsEl.innerHTML = '';
     blogs.forEach(blog => {
       const html = createTemplateBlogs(blog);
       blogsEl.insertAdjacentHTML('beforeend', html);
